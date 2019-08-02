@@ -96,7 +96,16 @@ public class MainActivity extends AppCompatActivity
         drawer.closeDrawer(GravityCompat.START);
         return true;
     }
-    public void chamika(){
+
+public void chamika(){
 
     }
+
+    public void Kavindu() {
+
+    }
+    public void Chethana(){
+        
+    }
+
 }
