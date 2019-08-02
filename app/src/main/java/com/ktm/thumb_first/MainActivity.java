@@ -97,6 +97,9 @@ public class MainActivity extends AppCompatActivity
         return true;
     }
 
+    public void Kavindu() {
+
+    }
     public void Chethana(){
         
     }
