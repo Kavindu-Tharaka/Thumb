@@ -1,15 +1,16 @@
 package com.ktm.thumb_first;
 
+import android.app.DatePickerDialog;
 import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.CheckBox;
+import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
-import com.wdullaer.materialdatetimepicker.date.DatePickerDialog;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
@@ -21,7 +22,7 @@ import java.util.Locale;
 
 public class AddTask extends AppCompatActivity implements DatePickerDialog.OnDateSetListener {
 
-
+    EditText task_date;
     TaskDBHelper mydb;
     DatePickerDialog dpd;
     int startYear = 0, startMonth = 0, startDay = 0;
@@ -54,6 +55,25 @@ public class AddTask extends AppCompatActivity implements DatePickerDialog.OnDat
         if (isUpdate) {
             init_update();
         }
+
+        task_date = findViewById(R.id.task_date);
+        task_date.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                showStartDatePicker();
+            }
+        });
+    }
+
+    public void showStartDatePicker(){
+        DatePickerDialog datePickerDialog = new DatePickerDialog(
+                this,
+                this,
+                Calendar.getInstance().get(Calendar.YEAR),
+                Calendar.getInstance().get(Calendar.MONTH),
+                Calendar.getInstance().get(Calendar.DAY_OF_MONTH)
+        );
+        datePickerDialog.show();
     }
 
 
@@ -129,24 +149,11 @@ public class AddTask extends AppCompatActivity implements DatePickerDialog.OnDat
 
     }
 
-    @Override
+/*    @Override
     public void onResume() {
         super.onResume();
         dpd = (DatePickerDialog) getFragmentManager().findFragmentByTag("startDatepickerdialog");
         if (dpd != null) dpd.setOnDateSetListener(this);
-    }
-
-    @Override
-    public void onDateSet(DatePickerDialog view, int year, int monthOfYear, int dayOfMonth) {
-        startYear = year;
-        startMonth = monthOfYear;
-        startDay = dayOfMonth;
-        int monthAddOne = startMonth + 1;
-        String date = (startDay < 10 ? "0" + startDay : "" + startDay) + "/" +
-                (monthAddOne < 10 ? "0" + monthAddOne : "" + monthAddOne) + "/" +
-                startYear;
-        EditText task_date = (EditText) findViewById(R.id.task_date);
-        task_date.setText(date);
     }
 
 
@@ -155,6 +162,18 @@ public class AddTask extends AppCompatActivity implements DatePickerDialog.OnDat
         dpd = DatePickerDialog.newInstance(AddTask.this, startYear, startMonth, startDay);
         dpd.setOnDateSetListener(this);
         dpd.show(getFragmentManager(), "startDatepickerdialog");
-    }
+    }*/
 
+    @Override
+    public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
+        startYear = year;
+        startMonth = month;
+        startDay = dayOfMonth;
+        int monthAddOne = startMonth + 1;
+        String date = (startDay < 10 ? "0" + startDay : "" + startDay) + "/" +
+                (monthAddOne < 10 ? "0" + monthAddOne : "" + monthAddOne) + "/" +
+                startYear;
+        EditText task_date =  findViewById(R.id.task_date);
+        task_date.setText(date);
+    }
 }

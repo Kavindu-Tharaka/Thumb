@@ -21,6 +21,7 @@
             </intent-filter>
         </activity>
 <activity android:name=".AddTask"/>
+<activity android:name=".TaskHome"/>
     </application>
 
 </manifest>

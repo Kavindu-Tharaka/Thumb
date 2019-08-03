@@ -14,4 +14,27 @@
     <string name="menu_share">Share</string>
     <string name="menu_send">Send</string>
     <string name="del">Cancel</string>
+
+    <string name="To_Do_List">To Do List</string>
+    <string name="Shopping_List">Shopping List</string>
+    <string name="Bought_list">Bought List</string>
+    <string name="Appointments">Appointments</string>
+    <string name="Diary">Diary</string>
+    <string name="Save">Save  </string>
+    <string name="Delete">Delete </string>
+    <string name="Delete_all">Delete All</string>
+    <string name="Edit">Edit  </string>
+    <string name="Bought">Bought </string>
+    <string name="Unbought">Unbought </string>
+    <string name="Clear">Clear </string>
+    <string name="itemName">Item Name Here</string>
+    <string name="quantity">Quantity Here</string>
+    <string name="Add_item">Add New \nItem</string>
+    <string name="Bought_Items">Bought \nItems</string>
+    <string name="name_one_element">Name here</string>
+    <string name="Qty_one_element">Qty here</string>
+    <string name="Quantity">Quantity :</string>
+    <string name="Added_On">Added On</string>
+    <string name="date">Date</string>
+    <string name="title_activity_diary_list">DiaryListActivity</string>
 </resources>
