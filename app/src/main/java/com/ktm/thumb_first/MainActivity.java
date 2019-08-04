@@ -1,9 +1,11 @@
 package com.ktm.thumb_first;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
+import android.support.v7.app.AlertDialog;
 import android.view.View;
 import android.support.v4.view.GravityCompat;
 import android.support.v7.app.ActionBarDrawerToggle;
@@ -30,15 +32,6 @@ public class MainActivity extends AppCompatActivity
         navigationView.setNavigationItemSelectedListener(this);
     }
 
-    @Override
-    public void onBackPressed() {
-        DrawerLayout drawer = findViewById(R.id.drawer_layout);
-        if (drawer.isDrawerOpen(GravityCompat.START)) {
-            drawer.closeDrawer(GravityCompat.START);
-        } else {
-            super.onBackPressed();
-        }
-    }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -88,17 +81,39 @@ public class MainActivity extends AppCompatActivity
     }
 
     public void redirectToDoList(View v) {
-        Intent intent = new Intent(this,TaskHome.class);
+        Intent intent = new Intent(this,ToDoListActivity.class);
         startActivity(intent);
     }
     public void redirectAppointments(View v){
-
+        Intent intent = new Intent(this,TaskHome.class);
+        startActivity(intent);
     }
     public void redirectDiary(View v) {
-
+        Intent intent = new Intent(this,DiaryListsActivity.class);
+        startActivity(intent);
     }
     public void redirectShoppingList(View v){
+        Intent intent = new Intent(this,ShoppingListActivity.class);
+        startActivity(intent);
+    }
 
+    @Override
+    public void onBackPressed() {
+        AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
+
+        builder.setMessage("Do you want to exit?")
+                .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        MainActivity.super.onBackPressed();
+                    }
+                })
+                .setNegativeButton("No",null)
+        // .setCancelable(false)
+        ;
+
+        AlertDialog alertDialog = builder.create();
+        alertDialog.show();
     }
 
 }

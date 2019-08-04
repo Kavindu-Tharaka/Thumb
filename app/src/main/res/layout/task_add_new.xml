@@ -15,7 +15,6 @@
         app:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
         app:popupTheme="@style/ThemeOverlay.AppCompat.Light" >
         <LinearLayout
-            xmlns:android="http://schemas.android.com/apk/res/android"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
@@ -39,10 +38,17 @@
                 android:paddingLeft="16dp"
                 android:paddingRight="4dp"
                 android:textColor="#ffffff"
-                android:text="Create"
+                android:text="Add New Appointment"
                 android:textSize="18dp"
                 android:textStyle="bold"
                 />
+
+            <Button
+                android:id="@+id/button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/del" />
             <ImageView
                 android:layout_width="35dp"
                 android:layout_height="35dp"
@@ -51,6 +57,8 @@
                 android:background="@android:color/transparent"
                 android:src="@drawable/ic_action_done"
                 android:onClick="doneAddTask"/>
+
+
         </LinearLayout>
     </android.support.v7.widget.Toolbar>
 
@@ -74,7 +82,7 @@
             android:layout_height="match_parent"
             android:layout_centerVertical="true"
             android:layout_gravity="center"
-            android:hint="Task"
+            android:hint="Client's Name"
             android:background="@android:color/white"
             android:padding="12dp"
             android:ems="10"
@@ -83,15 +91,16 @@
             android:textColor="#666666"/>
         <Space
             android:layout_width="match_parent"
-            android:layout_height="2dp"
+            android:layout_height="10dp"
             android:background="#D2D2D2"/>
+
         <EditText
             android:id="@+id/task_date"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_centerVertical="true"
             android:layout_gravity="center"
-            android:hint="Task Date"
+            android:hint="Appointment Date"
             android:padding="12dp"
             android:focusable="false"
             android:background="@android:color/white"
@@ -100,6 +109,48 @@
             android:textColorHint="#CCCCCC"
             android:textColor="#666666"
             android:onClick="showStartDatePicker"/>
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="10dp"
+            android:background="#D2D2D2"/>
+
+        <EditText
+            android:id="@+id/app_time"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_centerVertical="true"
+            android:layout_gravity="center"
+            android:hint="Time"
+            android:padding="12dp"
+            android:focusable="false"
+            android:background="@android:color/white"
+            android:ems="10"
+            android:singleLine="true"
+            android:textColorHint="#CCCCCC"
+            android:textColor="#666666"
+            android:onClick="showStartDatePicker"/>
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="10dp"
+            android:background="#D2D2D2"/>
+
+        <EditText
+            android:id="@+id/app_venue"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_centerVertical="true"
+            android:layout_gravity="center"
+            android:hint="Venue"
+            android:padding="12dp"
+            android:focusable="false"
+            android:background="@android:color/white"
+            android:ems="10"
+            android:singleLine="true"
+            android:textColorHint="#CCCCCC"
+            android:textColor="#666666"
+            android:onClick="showStartDatePicker"/>
+
 
     </LinearLayout>
 

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="300dp"
+    android:layout_height="300dp"
+    android:orientation="vertical"
+    android:padding="@dimen/activity_padding_size"
+    >
+
+
+
+        <EditText
+            android:id="@+id/item_name_save"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/edit_text_bg"
+            android:layout_marginVertical="@dimen/edit_text_margin_verticle"
+            android:hint="@string/itemName"
+            android:padding="@dimen/edit_text_padding_size"
+            android:textSize="@dimen/edittext_text_size"
+            android:inputType="text"
+            />
+
+        <EditText
+            android:id="@+id/quantity_save"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/edit_text_bg"
+            android:layout_marginVertical="@dimen/edit_text_margin_verticle"
+            android:hint="@string/quantity"
+            android:padding="@dimen/edit_text_padding_size"
+            android:textSize="@dimen/edittext_text_size"
+            android:inputType="text"
+            />
+
+
+
+    </LinearLayout>
+

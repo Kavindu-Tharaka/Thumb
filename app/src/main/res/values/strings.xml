@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Thumb_first</string>
+    <string name="app_name">Thumb</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
     <string name="nav_header_title">Android Studio</string>
@@ -37,4 +37,15 @@
     <string name="Added_On">Added On</string>
     <string name="date">Date</string>
     <string name="title_activity_diary_list">DiaryListActivity</string>
+    <string name="title_activity_diary_add">DiaryAddActivity</string>
+    <string name="title_activity_diary_lists">DiaryListsActivity</string>
+    <string name="diary">Diary</string>
+    <string name="add">Add</string>
+    <string name="update">Update</string>
+    <string name="select_time">Select Time</string>
+    <string name="content_here">Content Here</string>
+    <string name="select_date">Select Date</string>
+    <string name="title_activity_test">Test</string>
+
+
 </resources>

@@ -1,25 +1,51 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <dimen name="main_heading_size"> 35sp </dimen>
-    <dimen name="card_padding_size"> 15sp </dimen>
-    <dimen name="card_image_padding_size"> 15sp </dimen>
-    <dimen name="main_image_padding_size"> 40sp </dimen>
-    <dimen name="card_margin_size"> 20sp </dimen>
-    <dimen name="icon_padding_size"> 15sp </dimen>
-    <dimen name="activity_padding_size"> 10sp </dimen>
-    <dimen name="button_text_size"> 20sp </dimen>
-    <dimen name="edit_text_margin_verticle"> 15sp </dimen>
-    <dimen name="edit_text_padding_size"> 10sp </dimen>
-    <dimen name="edittext_text_size"> 25sp </dimen>
-    <dimen name="button_margin"> 5sp </dimen>
-    <dimen name="card_text_size"> 20sp </dimen>
-    <dimen name="item_name_size_one_element"> 25sp </dimen>
-    <dimen name="qty_size_one_element"> 17sp </dimen>
-    <dimen name="btn_height_one_element"> 30sp </dimen>
-    <dimen name="Created_On">13sp</dimen>
     <dimen name="date">12sp</dimen>
+    <dimen name="txtTitle">17sp</dimen>
+    <dimen name="date_time_text_padding">30px</dimen>
+    <dimen name="margin_start">8dp</dimen>
+    <dimen name="margin_top">8dp</dimen>
+    <dimen name="margin_end">8dp</dimen>
+    <dimen name="margin_bottom">8dp</dimen>
+    <dimen name="image_diary_width">130dp</dimen>
+    <dimen name="image_diary_height">91dp</dimen>
+    <dimen name="diary_btn_txtsize">16</dimen>
+    <dimen name="diary_layout_width">8dp</dimen>
 
+
+    <string name="plus_bttn">Add</string>
+    <string name="add_title">Add Task</string>
+    <string name="add_bttn">Add Your Task</string>
+    <string name="task_hint">Task</string>
+    <string name="date_hint">Date</string>
+    <string name="time_hint">Time</string>
+
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+    <dimen name="nav_header_vertical_spacing">8dp</dimen>
+    <dimen name="nav_header_height">176dp</dimen>
+    <dimen name="fab_margin">16dp</dimen>
+    <dimen name="main_heading_size">35sp</dimen>
+    <dimen name="card_padding_size">15sp</dimen>
+    <dimen name="card_image_padding_size">15sp</dimen>
+    <dimen name="main_image_padding_size">40sp</dimen>
+    <dimen name="card_margin_size">20sp</dimen>
+    <dimen name="icon_padding_size">15sp</dimen>
+    <dimen name="activity_padding_size">10sp</dimen>
+    <dimen name="button_text_size">20sp</dimen>
+    <dimen name="edit_text_margin_verticle">15sp</dimen>
+    <dimen name="edit_text_padding_size">10sp</dimen>
+    <dimen name="edittext_text_size">25sp</dimen>
+    <dimen name="button_margin">5sp</dimen>
+    <dimen name="card_text_size">20sp</dimen>
+    <dimen name="item_name_size_one_element">25sp</dimen>
+    <dimen name="qty_size_one_element">17sp</dimen>
+    <dimen name="btn_height_one_element">30sp</dimen>
+    <dimen name="Created_On">13sp</dimen>
+    <dimen name="text_weight">314dp</dimen>
+    <dimen name="date_time_height">39dp</dimen>
+    <dimen name="btn_size">39dp</dimen>
 
 
 </resources>
