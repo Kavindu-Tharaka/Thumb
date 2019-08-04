@@ -23,7 +23,16 @@
         <!-- darker variant for the status bar and contextual app bars -->
         <item name="colorPrimaryDark">#25252F</item>
         <!-- theme UI controls like checkboxes and text fields -->
-        <item name="colorAccent">#FF4081</item>
+        <item name="colorAccent">@color/colorPrimary</item>
     </style>
+
+    <style name="AppThemeToolBar.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="AppThemeToolBar.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="AppThemeToolBar.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 
 </resources>

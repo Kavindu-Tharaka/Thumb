@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="5dp">
+
+    <TextView
+        android:id="@+id/textTASK"
+        android:layout_width="77dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="10dp"
+        android:text="@string/add_title"
+        android:textSize="@dimen/txtTitle"
+        android:textStyle="bold" />
+
+    <EditText
+        android:id="@+id/tasktxt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:ems="10"
+        android:hint="@string/task_hint"
+        android:inputType="textPersonName" />
+
+    <EditText
+        android:id="@+id/datetxt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:ems="10"
+        android:hint="@string/date_hint"
+        android:inputType="textPersonName" />
+
+    <EditText
+        android:id="@+id/timetxt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:ems="10"
+        android:hint="@string/time_hint"
+        android:inputType="textPersonName" />
+
+    <Button
+        android:id="@+id/tsk_submit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:background="@color/colorPrimaryDark"
+        android:text="@string/add_bttn"
+        android:textColor="#ffff" />
+</LinearLayout>

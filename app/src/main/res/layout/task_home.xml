@@ -31,7 +31,7 @@
                 android:paddingLeft="16dp"
                 android:paddingRight="4dp"
                 android:textColor="#ffffff"
-                android:text="Task"
+                android:text="Appointments"
                 android:textSize="18dp"
                 android:textStyle="bold"
                 />
