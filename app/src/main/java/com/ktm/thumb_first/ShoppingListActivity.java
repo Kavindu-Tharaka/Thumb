@@ -19,7 +19,7 @@ import es.dmoral.toasty.Toasty;
 public class ShoppingListActivity extends AppCompatActivity {
 
     TabLayout tabLayout;
-    AppBarLayout appBarLayout;
+    //AppBarLayout appBarLayout;
     ViewPager viewPager;
 
     @Override

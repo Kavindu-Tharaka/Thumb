@@ -16,9 +16,7 @@ import java.util.Calendar;
 import java.util.Date;
 import java.util.Locale;
 
-/**
- * Created by Ferdousur Rahman Sarker on 3/17/2018.
- */
+
 
 public class AddTask extends AppCompatActivity implements DatePickerDialog.OnDateSetListener {
 

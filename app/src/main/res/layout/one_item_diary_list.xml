@@ -25,7 +25,7 @@
             android:layout_height="wrap_content"
             android:text="@string/mdtp_time"
             android:gravity="center"
-            android:textSize="@dimen/item_name_size_one_element" />
+            android:textSize="@dimen/qty_size_one_element" />
 
         <LinearLayout
             android:layout_width="match_parent"
