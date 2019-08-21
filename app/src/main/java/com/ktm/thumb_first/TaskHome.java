@@ -17,9 +17,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 
 
-/**
- * Created by Ferdousur Rahman Sarker on 3/16/2018.
- */
+
 
 public class TaskHome extends AppCompatActivity {
 

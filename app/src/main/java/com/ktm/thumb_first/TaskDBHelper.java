@@ -10,9 +10,6 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Locale;
 
-/**
- * Created by Ferdousur Rahman Sarker on 3/19/2018.
- */
 
 public class TaskDBHelper extends SQLiteOpenHelper {
 

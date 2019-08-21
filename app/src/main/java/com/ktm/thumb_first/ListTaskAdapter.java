@@ -11,9 +11,6 @@ import com.amulyakhare.textdrawable.util.ColorGenerator;
 import java.util.ArrayList;
 import java.util.HashMap;
 
-/**
- * Created by Ferdousur Rahman Sarker on 10/23/2017.
- */
 
 public class ListTaskAdapter extends BaseAdapter {
     private Activity activity;
