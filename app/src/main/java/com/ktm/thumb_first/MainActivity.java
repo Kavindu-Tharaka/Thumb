@@ -97,7 +97,7 @@ public class MainActivity extends AppCompatActivity
     public void onBackPressed() {
         AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
 
-        builder.setMessage("Do you want to exit?")
+        builder.setMessage("Do you really want to exit?")
                 .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
