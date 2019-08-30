@@ -9,7 +9,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppThemeToolBar">
-        <activity android:name=".ShoppingListActivity"></activity>
+        <activity android:name=".ProfileActivity"></activity>
+        <activity android:name=".LoginActivity" />
+        <activity android:name=".WelcomeActivity" />
+        <activity android:name=".ShoppingListActivity" />
         <activity android:name=".ToDoListActivity" />
         <activity android:name=".DiaryEditActivity" />
         <activity android:name=".DiaryAddActivity" />
@@ -19,8 +22,8 @@
             android:theme="@style/AppThemeToolBar.NoActionBar" />
         <activity
             android:name=".MainActivity"
-            android:screenOrientation="portrait"
             android:label="@string/app_name"
+            android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
