@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".LoginActivity"
+    android:orientation="vertical"
+    android:padding="20dp">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/colorPrimaryText"
+        android:textSize="@dimen/main_heading_size"
+        android:text="@string/login"
+        android:textAlignment="center"/>
+
+    <TextView
+        android:id="@+id/welcome_note"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/textview_text_size"
+        android:textAlignment="center"/>
+
+
+    <EditText
+        android:id="@+id/login_password"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:hint="@string/hint_enter_password"
+        android:layout_marginTop="10dp"
+        android:inputType="textPassword"
+        android:textColor="@color/colorPrimaryText"
+        android:background="@drawable/edit_text_bg"
+        android:padding="@dimen/edit_text_padding_size"
+        android:importantForAutofill="no"
+        tools:targetApi="o"/>
+
+    <Button
+        android:onClick="login"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:textSize="18sp"
+        android:background="@drawable/btn_background"
+        android:layout_margin="20dp"
+        android:text="@string/login"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:layout_gravity="center_horizontal"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"/>
+
+
+</LinearLayout>
