@@ -52,7 +52,7 @@
                 android:layout_width="70sp"
                 android:layout_height="30sp"
                 android:layout_marginHorizontal="@dimen/button_margin"
-                android:background="@drawable/green_box_background"
+                android:background="@drawable/blue_box_background"
                 android:onClick="editDiaryItem"
                 android:text="@string/Edit"
 
