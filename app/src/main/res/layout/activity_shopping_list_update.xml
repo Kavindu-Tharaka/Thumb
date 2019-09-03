@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".ShoppingListUpdateActivity">
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:padding="@dimen/activity_padding_size"
+        >
+
+        <EditText
+            android:id="@+id/item_name_shopping_list_update"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/edittext_text_size"
+            android:background="@drawable/edit_text_bg"
+            android:padding="@dimen/edit_text_padding_size"
+            android:layout_marginHorizontal="@dimen/activity_horizontal_margin"
+            android:layout_marginVertical="@dimen/margin_top"
+            />
+
+        <EditText
+            android:id="@+id/item_qty_shopping_list_update"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/edittext_text_size"
+            android:background="@drawable/edit_text_bg"
+            android:padding="@dimen/edit_text_padding_size"
+            android:layout_marginHorizontal="@dimen/activity_horizontal_margin"
+            android:layout_marginVertical="@dimen/margin_top"
+            />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:gravity="end"
+            android:padding="@dimen/activity_padding_size"
+            >
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/btn_background"
+                android:text="@string/update"
+                android:textSize="@dimen/button_text_size"
+                android:onClick="updateItem"
+                android:layout_marginHorizontal="@dimen/button_margin"
+                android:layout_marginVertical="@dimen/margin_top"
+                />
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/button_margin"
+                android:layout_marginVertical="@dimen/margin_top"
+                android:background="@drawable/cancel_button_bg"
+                android:onClick="clearUpdateShoppingItem"
+                android:text="@string/mdtp_cancel"
+                android:textSize="@dimen/button_text_size" />
+
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        />
+
+</LinearLayout>

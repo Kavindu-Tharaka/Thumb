@@ -1,6 +1,7 @@
 package com.ktm.thumb_first;
 
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.database.sqlite.SQLiteDatabase;
 import android.support.design.widget.AppBarLayout;
 import android.support.design.widget.TabLayout;
@@ -41,7 +42,7 @@ public class ShoppingListActivity extends AppCompatActivity {
 
     public void editItem(View v){
 
-/*        LinearLayout parent1 = (LinearLayout) v.getParent();
+        LinearLayout parent1 = (LinearLayout) v.getParent();
         LinearLayout parent2 = (LinearLayout) parent1.getParent();
 
         TextView tv1 = parent1.findViewById(R.id.item_id_shopping_list);
@@ -56,8 +57,9 @@ public class ShoppingListActivity extends AppCompatActivity {
 
         intent.putExtra("ID", id); //pass  parametrs to next activity which start by start intent
         intent.putExtra("ITEM", itemName); //pass  parametrs to next activity which start by start intent
-        intent.putExtra("QTY", qty); //pass  parametrs to next activity which start by start intent*/
+        intent.putExtra("QTY", qty); //pass  parametrs to next activity which start by start intent
 
+        startActivity(intent);
     }
 
     public void deleteItemShoppingList(View v){

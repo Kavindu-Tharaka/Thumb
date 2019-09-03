@@ -17,11 +17,11 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     public void onCreate(SQLiteDatabase db) {
 
         String SQL_CREATE_ENTRIES_SHOPPING_LIST = " CREATE TABLE " +ThumbMaster.ShoppingList.TABLE_NAME+
-                "( " +ThumbMaster.ShoppingList.COLUMN_NAME_ID + "INTEGER PRIMARY KEY AUTOINCREMENT, " +
-                ThumbMaster.ShoppingList.COLUMN_NAME_ITEM + "TEXT" +
-                ThumbMaster.ShoppingList.COLUMN_NAME_QUANTITY + "TEXT" +
-                ThumbMaster.ShoppingList.COLUMN_NAME_DATE + "TEXT" +
-                ThumbMaster.ShoppingList.COLUMN_NAME_ISBOUGHT + "INTEGER DEFAULT 0)";
+                "( " +ThumbMaster.ShoppingList.COLUMN_NAME_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
+                ThumbMaster.ShoppingList.COLUMN_NAME_ITEM + " TEXT, " +
+                ThumbMaster.ShoppingList.COLUMN_NAME_QUANTITY + " TEXT, " +
+                ThumbMaster.ShoppingList.COLUMN_NAME_DATE + " TEXT, " +
+                ThumbMaster.ShoppingList.COLUMN_NAME_ISBOUGHT + " INTEGER DEFAULT 0)";
 
         db.execSQL(SQL_CREATE_ENTRIES_SHOPPING_LIST);
 
