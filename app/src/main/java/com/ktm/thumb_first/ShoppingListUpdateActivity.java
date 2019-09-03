@@ -43,13 +43,17 @@ public class ShoppingListUpdateActivity extends AppCompatActivity {
 
     public void updateItem(View v){
 
-        String itemName = editText.getText().toString();
-        String itemQty = editText1.getText().toString();
+        EditText itemNAME = findViewById(R.id.item_name_shopping_list_update);
+        EditText itemQTY = findViewById(R.id.item_qty_shopping_list_update);
+
+        String itemName  = itemNAME.getText().toString();
+        String itemQty = itemQTY.getText().toString();
 
         if (itemName.isEmpty() || itemQty.isEmpty()) {    //if no details are entered, error msg will be displayed
             Toasty.info(this, "Enter details before updated!", Toast.LENGTH_SHORT).show();
         } else {
-            DatabaseHelper databaseHelper = new DatabaseHelper(this);
+
+            DBHelper databaseHelper = new DBHelper(this);
             SQLiteDatabase db = databaseHelper.getWritableDatabase();
 
             String query = "update " + ThumbMaster.ShoppingList.TABLE_NAME + " set " + ThumbMaster.ShoppingList.COLUMN_NAME_ITEM + " = '" + itemName + "', " + ThumbMaster.ShoppingList.COLUMN_NAME_QUANTITY + " = '" + itemQty + "' where " + ThumbMaster.ShoppingList.COLUMN_NAME_ID + " = " + id + "";
@@ -63,6 +67,8 @@ public class ShoppingListUpdateActivity extends AppCompatActivity {
             finish();
 
             startActivity(intent);
+
+
         }
     }
 
