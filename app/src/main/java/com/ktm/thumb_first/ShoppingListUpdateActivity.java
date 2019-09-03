@@ -1,0 +1,73 @@
+package com.ktm.thumb_first;
+
+import android.content.Intent;
+import android.database.sqlite.SQLiteDatabase;
+import android.support.v7.app.AppCompatActivity;
+import android.os.Bundle;
+import android.view.View;
+import android.widget.EditText;
+import android.widget.Toast;
+
+import es.dmoral.toasty.Toasty;
+
+public class ShoppingListUpdateActivity extends AppCompatActivity {
+
+    String itemname, qty, idtemp;
+    int id;
+    EditText editText, editText1;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_shopping_list_update);
+
+        Intent intent = getIntent();
+        itemname = intent.getStringExtra("ITEM");
+        qty = intent.getStringExtra("QTY");
+        idtemp = intent.getStringExtra("ID");
+
+        id = Integer.parseInt(idtemp);
+
+        editText = findViewById(R.id.item_name_shopping_list_update);
+        editText1 = findViewById(R.id.item_qty_shopping_list_update);
+
+        editText.setText(itemname);
+        editText1.setText(qty);
+
+    }
+
+    public void clearUpdateShoppingItem(View v){
+        editText.setText("");
+        editText1.setText("");
+    }
+
+    public void updateItem(View v){
+
+        String itemName = editText.getText().toString();
+        String itemQty = editText1.getText().toString();
+
+        if (itemName.isEmpty() || itemQty.isEmpty()) {    //if no details are entered, error msg will be displayed
+            Toasty.info(this, "Enter details before updated!", Toast.LENGTH_SHORT).show();
+        } else {
+            DatabaseHelper databaseHelper = new DatabaseHelper(this);
+            SQLiteDatabase db = databaseHelper.getWritableDatabase();
+
+            String query = "update " + ThumbMaster.ShoppingList.TABLE_NAME + " set " + ThumbMaster.ShoppingList.COLUMN_NAME_ITEM + " = '" + itemName + "', " + ThumbMaster.ShoppingList.COLUMN_NAME_QUANTITY + " = '" + itemQty + "' where " + ThumbMaster.ShoppingList.COLUMN_NAME_ID + " = " + id + "";
+
+            db.execSQL(query);
+
+            Toasty.success(this, "Updated successfully", Toast.LENGTH_SHORT).show();
+
+            Intent intent = new Intent(this,ShoppingListActivity.class);
+
+            finish();
+
+            startActivity(intent);
+        }
+    }
+
+
+
+
+
+}
