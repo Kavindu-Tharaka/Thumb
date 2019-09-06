@@ -34,10 +34,10 @@ public class FragmentBoughtList extends Fragment implements View.OnClickListener
 
         //List<String> list = new ArrayList<>();
 
-        DBHelper mydb = new DBHelper(getActivity());
+        DatabaseHelper mydb = new DatabaseHelper(getActivity());
         SQLiteDatabase db = mydb.getReadableDatabase();
 
-        String query = "select * from ShoppingList where isBought = 1";
+        String query = "select * from "+ ThumbMaster.ShoppingList.TABLE_NAME +" where "+ ThumbMaster.ShoppingList.COLUMN_NAME_ISBOUGHT +" = 1";
         Cursor cursor = db.rawQuery(query,null);   //Cursor -> resultSet , rawQuery -> executeQuery()
         cursor.moveToFirst();
 
@@ -84,9 +84,9 @@ public class FragmentBoughtList extends Fragment implements View.OnClickListener
                     public void onClick(DialogInterface dialog, int which) {
 
 
-                        DBHelper myDB = new DBHelper(getActivity());
+                        DatabaseHelper myDB = new DatabaseHelper(getActivity());
                         SQLiteDatabase db = myDB.getWritableDatabase();
-                        String sqlQuery = "delete from ShoppingList where isBought = 1";
+                        String sqlQuery = "delete from "+ ThumbMaster.ShoppingList.TABLE_NAME +" where "+ ThumbMaster.ShoppingList.COLUMN_NAME_ISBOUGHT +" = 1";
                         db.execSQL(sqlQuery);
 
                         Toasty.success(getActivity(), "Deleted!", Toast.LENGTH_SHORT).show();
