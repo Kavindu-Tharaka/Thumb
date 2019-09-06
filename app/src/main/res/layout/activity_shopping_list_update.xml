@@ -69,7 +69,7 @@
                 android:layout_marginVertical="@dimen/margin_top"
                 android:background="@drawable/cancel_button_bg"
                 android:onClick="clearUpdateShoppingItem"
-                android:text="@string/mdtp_cancel"
+                android:text="@string/Clear"
                 android:textSize="@dimen/button_text_size" />
 
 

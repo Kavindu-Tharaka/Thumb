@@ -2,6 +2,8 @@ package com.ktm.thumb_first;
 
 import android.content.Intent;
 import android.database.sqlite.SQLiteDatabase;
+import android.provider.ContactsContract;
+import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -50,10 +52,12 @@ public class ShoppingListUpdateActivity extends AppCompatActivity {
         String itemQty = itemQTY.getText().toString();
 
         if (itemName.isEmpty() || itemQty.isEmpty()) {    //if no details are entered, error msg will be displayed
-            Toasty.info(this, "Enter details before updated!", Toast.LENGTH_SHORT).show();
+            //Toasty.info(this, "Enter details before updated!", Toast.LENGTH_SHORT).show();
+            Snackbar.make(v, "Enter details before save!", Snackbar.LENGTH_LONG).setAction("Action", null).show();
+
         } else {
 
-            DBHelper databaseHelper = new DBHelper(this);
+            DatabaseHelper databaseHelper = new DatabaseHelper(this);
             SQLiteDatabase db = databaseHelper.getWritableDatabase();
 
             String query = "update " + ThumbMaster.ShoppingList.TABLE_NAME + " set " + ThumbMaster.ShoppingList.COLUMN_NAME_ITEM + " = '" + itemName + "', " + ThumbMaster.ShoppingList.COLUMN_NAME_QUANTITY + " = '" + itemQty + "' where " + ThumbMaster.ShoppingList.COLUMN_NAME_ID + " = " + id + "";
