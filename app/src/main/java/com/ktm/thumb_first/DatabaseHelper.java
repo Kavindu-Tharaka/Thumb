@@ -17,24 +17,25 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     public void onCreate(SQLiteDatabase db) {
 
         String SQL_CREATE_ENTRIES_SHOPPING_LIST = " CREATE TABLE " +ThumbMaster.ShoppingList.TABLE_NAME+
+
                 "( " +ThumbMaster.ShoppingList._ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
                 ThumbMaster.ShoppingList.COLUMN_NAME_ITEM + " TEXT, " +
                 ThumbMaster.ShoppingList.COLUMN_NAME_QUANTITY + " TEXT, " +
                 ThumbMaster.ShoppingList.COLUMN_NAME_DATE + " TEXT, " +
                 ThumbMaster.ShoppingList.COLUMN_NAME_ISBOUGHT + " INTEGER DEFAULT 0)";
 
-//String SQL_CREATE_ENTRIES_SHOPPING_LIST = " CREATE TABLE ShoppingList(_ID integer AUTOINCREMENT PRIMARY KEY, item TEXT, quantity TEXT, date TEXT, isBought INTEGER default 0)";
 
         db.execSQL(SQL_CREATE_ENTRIES_SHOPPING_LIST);
 
-/*        String SQL_CREATE_ENTRIES_DIARY = " CREATE TABLE " +ThumbMaster.ShoppingList.TABLE_NAME+
-                                        "( " +ThumbMaster.ShoppingList.COLUMN_NAME_ID + "INTEGER PRIMARY KEY AUTOINCREMENT, " +
-                                        ThumbMaster.ShoppingList.COLUMN_NAME_ITEM + "TEXT" +
-                                        ThumbMaster.ShoppingList.COLUMN_NAME_QUANTITY + "TEXT" +
-                                        ThumbMaster.ShoppingList.COLUMN_NAME_DATE + "TEXT" +
-                                        ThumbMaster.ShoppingList.COLUMN_NAME_ISBOUGHT + "INTEGER DEFAULT 0)";
 
-        db.execSQL(SQL_CREATE_ENTRIES_DIARY);*/
+
+        String SQL_CREATE_ENTRIES_DIARY = "create table "+ ThumbMaster.Diary.TABLE_NAME +
+                "("+ ThumbMaster.Diary._ID +" INTEGER primary key AUTOINCREMENT, "+
+                ThumbMaster.Diary.COLUMN_NAME_DATE +" TEXT, "+
+                ThumbMaster.Diary.COLUMN_NAME_TIME +" TEXT,"+
+                ThumbMaster.Diary.COLUMN_NAME_CONTENT+" TEXT) ";
+
+        db.execSQL(SQL_CREATE_ENTRIES_DIARY);
 
 
     }

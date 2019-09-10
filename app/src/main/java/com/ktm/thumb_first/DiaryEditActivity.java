@@ -137,7 +137,7 @@ public class DiaryEditActivity extends AppCompatActivity implements DatePickerDi
         }
 
         else {
-            DBHelper dbHelper = new DBHelper(DiaryEditActivity.this);
+            DatabaseHelper dbHelper = new DatabaseHelper(DiaryEditActivity.this);
             SQLiteDatabase database = dbHelper.getWritableDatabase();
 
             String query = " UPDATE Diary SET date = '" +date+ "', content = '"+content+"',time = '" +time+ "'  where _id = '"+id+"'";
