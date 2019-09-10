@@ -9,7 +9,6 @@ public final class ThumbMaster {
     public static class ShoppingList implements BaseColumns{
 
         public static final String TABLE_NAME = "ShoppingList";
-        public static final String COLUMN_NAME_ID = "_id";
         public static final String COLUMN_NAME_ITEM = "item";
         public static final String COLUMN_NAME_QUANTITY = "quantity";
         public static final String COLUMN_NAME_DATE = "date";
@@ -17,7 +16,12 @@ public final class ThumbMaster {
     }
 
     public static class Diary implements BaseColumns{
+        String tableDiaryListQuery = "create table Diary(_id INTEGER primary key AUTOINCREMENT, date TEXT, time TEXT,content TEXT) ";
 
+        public  static final String TABLE_NAME = "Diary";
+        public  static final String COLUMN_NAME_DATE = "date";
+        public  static final String COLUMN_NAME_TIME= "time";
+        public  static final String COLUMN_NAME_CONTENT= "content";
 
     }
 
