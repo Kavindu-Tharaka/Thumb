@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.design.widget.FloatingActionButton;
+import android.support.design.widget.Snackbar;
 import android.support.v4.app.Fragment;
 import android.support.v4.widget.SimpleCursorAdapter;
 import android.support.v7.app.AlertDialog;
@@ -30,7 +31,6 @@ public class FragmentShoppingList extends Fragment implements View.OnClickListen
     ListView listView;
     Button edit, delete, bought;
     FloatingActionButton floatingActionButton;
-
     public FragmentShoppingList() {
     }
 
@@ -44,7 +44,7 @@ public class FragmentShoppingList extends Fragment implements View.OnClickListen
         DatabaseHelper mydb = new DatabaseHelper(getActivity());
         SQLiteDatabase db = mydb.getReadableDatabase();
 
-        String query = "select * from ShoppingList where isBought = 0";
+        String query = "select * from "+ ThumbMaster.ShoppingList.TABLE_NAME +" where "+ ThumbMaster.ShoppingList.COLUMN_NAME_ISBOUGHT +" = 0";
         Cursor cursor = db.rawQuery(query,null);   //Cursor -> resultSet , rawQuery -> executeQuery()
         cursor.moveToFirst();
 
@@ -84,7 +84,7 @@ public class FragmentShoppingList extends Fragment implements View.OnClickListen
 
     @Override
     public void onClick(View v) {
-                View view = LayoutInflater.from(getActivity()).inflate(R.layout.activity_shopping_list_add, null);
+                final View view = LayoutInflater.from(getActivity()).inflate(R.layout.activity_shopping_list_add, null);
                 final EditText item = view.findViewById(R.id.item_name_save);
                 final EditText qty = view.findViewById(R.id.quantity_save);
 
@@ -106,12 +106,14 @@ public class FragmentShoppingList extends Fragment implements View.OnClickListen
 
                                 if (itemName.isEmpty() || quantity.isEmpty()) {    //if no details are entered, error msg will be displayed
                                     Toasty.info(getActivity(), "Enter details before save!", Toast.LENGTH_SHORT).show();
+                                    //Snackbar.make(view, "Enter details before save!", Snackbar.LENGTH_LONG).setAction("Action", null).show();
+
                                 } else {
                                     //save data
                                     DatabaseHelper myDB = new DatabaseHelper(getActivity());
                                     SQLiteDatabase db = myDB.getWritableDatabase();  //WritableDatabase
 
-                                    String query = "insert into ShoppingList(item, quantity, date) values ( '" + itemName + "', '" + quantity + "', '" + currentDate + "' ) ";
+                                    String query = "insert into "+ ThumbMaster.ShoppingList.TABLE_NAME +"( "+ThumbMaster.ShoppingList.COLUMN_NAME_ITEM+" , "+ThumbMaster.ShoppingList.COLUMN_NAME_QUANTITY+", "+ThumbMaster.ShoppingList.COLUMN_NAME_DATE+") values ( '" + itemName + "', '" + quantity + "', '" + currentDate + "' ) ";
                                     db.execSQL(query);
 
                                     Toasty.success(getActivity(), "Saved Successfully!", Toast.LENGTH_SHORT).show();

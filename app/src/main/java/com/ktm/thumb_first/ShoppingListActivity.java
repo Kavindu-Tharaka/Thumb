@@ -1,6 +1,7 @@
 package com.ktm.thumb_first;
 
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.database.sqlite.SQLiteDatabase;
 import android.support.design.widget.AppBarLayout;
 import android.support.design.widget.TabLayout;
@@ -41,7 +42,7 @@ public class ShoppingListActivity extends AppCompatActivity {
 
     public void editItem(View v){
 
-/*        LinearLayout parent1 = (LinearLayout) v.getParent();
+        LinearLayout parent1 = (LinearLayout) v.getParent();
         LinearLayout parent2 = (LinearLayout) parent1.getParent();
 
         TextView tv1 = parent1.findViewById(R.id.item_id_shopping_list);
@@ -56,8 +57,10 @@ public class ShoppingListActivity extends AppCompatActivity {
 
         intent.putExtra("ID", id); //pass  parametrs to next activity which start by start intent
         intent.putExtra("ITEM", itemName); //pass  parametrs to next activity which start by start intent
-        intent.putExtra("QTY", qty); //pass  parametrs to next activity which start by start intent*/
+        intent.putExtra("QTY", qty); //pass  parametrs to next activity which start by start intent
 
+        finish(); //to avoid many backs
+        startActivity(intent);
     }
 
     public void deleteItemShoppingList(View v){
@@ -77,7 +80,7 @@ public class ShoppingListActivity extends AppCompatActivity {
 
                         DatabaseHelper myDB = new DatabaseHelper(ShoppingListActivity.this);
                         SQLiteDatabase db = myDB.getWritableDatabase();
-                        String sqlQuery = "delete from ShoppingList where _id = " + id+ "";
+                        String sqlQuery = "delete from "+ThumbMaster.ShoppingList.TABLE_NAME+" where "+ThumbMaster.ShoppingList.COLUMN_NAME_ID+" = " + id+ "";
                         db.execSQL(sqlQuery);
 
                         Toasty.success(ShoppingListActivity.this, "Deleted!", Toast.LENGTH_SHORT).show();
@@ -105,7 +108,7 @@ public class ShoppingListActivity extends AppCompatActivity {
         DatabaseHelper myDB = new DatabaseHelper(this);
         SQLiteDatabase db = myDB.getWritableDatabase();  //WritableDatabase
 
-        String sqlQuery = "UPDATE ShoppingList SET isBought = 1 WHERE _id = " + id + "";
+        String sqlQuery = "UPDATE "+ThumbMaster.ShoppingList.TABLE_NAME+" SET "+ThumbMaster.ShoppingList.COLUMN_NAME_ISBOUGHT+" = 1 WHERE "+ThumbMaster.ShoppingList.COLUMN_NAME_ID+" = " + id + "";
         db.execSQL(sqlQuery);
 
         Toasty.success(this, "Bought!", Toast.LENGTH_SHORT).show();
@@ -125,7 +128,7 @@ public class ShoppingListActivity extends AppCompatActivity {
         DatabaseHelper myDB = new DatabaseHelper(this);
         SQLiteDatabase db = myDB.getWritableDatabase();  //WritableDatabase
 
-        String sqlQuery = "UPDATE ShoppingList SET isBought = 0 WHERE _id = " + id + "";
+        String sqlQuery = "UPDATE "+ThumbMaster.ShoppingList.TABLE_NAME+" SET "+ThumbMaster.ShoppingList.COLUMN_NAME_ISBOUGHT+" = 0 WHERE "+ThumbMaster.ShoppingList.COLUMN_NAME_ID+" = " + id + "";
         db.execSQL(sqlQuery);
 
         Toasty.success(this, "Made Unbought!", Toast.LENGTH_SHORT).show();
@@ -153,7 +156,7 @@ public class ShoppingListActivity extends AppCompatActivity {
 
                         DatabaseHelper myDB = new DatabaseHelper(ShoppingListActivity.this);
                         SQLiteDatabase db = myDB.getWritableDatabase();
-                        String sqlQuery = "delete from ShoppingList where _id = " + id+ "";
+                        String sqlQuery = "delete from "+ThumbMaster.ShoppingList.TABLE_NAME+" where "+ThumbMaster.ShoppingList.COLUMN_NAME_ID+" = " + id+ "";
                         db.execSQL(sqlQuery);
 
                         Toasty.success(ShoppingListActivity.this, "Deleted!", Toast.LENGTH_SHORT).show();

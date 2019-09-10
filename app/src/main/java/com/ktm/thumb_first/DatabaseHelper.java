@@ -7,7 +7,7 @@ import android.database.sqlite.SQLiteOpenHelper;
 public class DatabaseHelper extends SQLiteOpenHelper {
 
     private static final int DATABASE_VERSION = 1;
-    private static final String DATABASE_NAME = "Thumb.db";
+    private static final String DATABASE_NAME = "ThumbDB.db";
 
     public DatabaseHelper(Context context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
@@ -17,11 +17,13 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     public void onCreate(SQLiteDatabase db) {
 
         String SQL_CREATE_ENTRIES_SHOPPING_LIST = " CREATE TABLE " +ThumbMaster.ShoppingList.TABLE_NAME+
+
                 "( " +ThumbMaster.ShoppingList._ID + "INTEGER PRIMARY KEY AUTOINCREMENT, " +
                 ThumbMaster.ShoppingList.COLUMN_NAME_ITEM + "TEXT" +
                 ThumbMaster.ShoppingList.COLUMN_NAME_QUANTITY + "TEXT" +
                 ThumbMaster.ShoppingList.COLUMN_NAME_DATE + "TEXT" +
                 ThumbMaster.ShoppingList.COLUMN_NAME_ISBOUGHT + "INTEGER DEFAULT 0)";
+      
 
         db.execSQL(SQL_CREATE_ENTRIES_SHOPPING_LIST);
 
