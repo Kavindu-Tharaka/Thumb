@@ -137,4 +137,6 @@ public class DiaryAddActivity extends AppCompatActivity implements DatePickerDia
         textView2.setText("");
         editText2.setText("");
     }
+
+    public void ABD(){}
 }
