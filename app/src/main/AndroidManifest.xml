@@ -14,7 +14,6 @@
         <activity android:name=".LoginActivity" />
         <activity android:name=".WelcomeActivity" />
         <activity android:name=".ShoppingListActivity" />
-        <activity android:name=".ToDoListActivity" />
         <activity android:name=".DiaryEditActivity" />
         <activity android:name=".DiaryAddActivity" />
         <activity
@@ -32,8 +31,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".AddTask" />
-        <activity android:name=".TaskHome" />
     </application>
 
 </manifest>
