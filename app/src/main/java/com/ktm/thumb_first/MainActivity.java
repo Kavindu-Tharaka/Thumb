@@ -122,6 +122,10 @@ public class MainActivity extends AppCompatActivity
     }
 
 
+    public void ASDSAD() {
+        //dewfewfe
+    }
+
     public void redirectDiary(View v) {
         Intent intent = new Intent(this,DiaryListsActivity.class);
         startActivity(intent);

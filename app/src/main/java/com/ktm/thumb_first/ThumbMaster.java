@@ -16,7 +16,6 @@ public final class ThumbMaster {
     }
 
     public static class Diary implements BaseColumns{
-        String tableDiaryListQuery = "create table Diary(_id INTEGER primary key AUTOINCREMENT, date TEXT, time TEXT,content TEXT) ";
 
         public  static final String TABLE_NAME = "Diary";
         public  static final String COLUMN_NAME_DATE = "date";
@@ -25,15 +24,6 @@ public final class ThumbMaster {
 
     }
 
-    public static class TodoList implements BaseColumns{
-
-
-    }
-
-    public static class AppointmestList implements BaseColumns{
-
-
-    }
 
 
 
