@@ -11,7 +11,7 @@ public class Add_ToDo extends AppCompatActivity {
         setContentView(R.layout.activity_add__to_do);
     }
 
-    public void alutheka(){
+    public void savindri(){
 
     }
 
