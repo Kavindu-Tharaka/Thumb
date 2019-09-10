@@ -41,7 +41,7 @@ public class FragmentShoppingList extends Fragment implements View.OnClickListen
         //listView = findViewById(R.id.shopping_list); //access the listView which is ID = "shopping_list"
         //List<String> list = new ArrayList<>();
 
-        DBHelper mydb = new DBHelper(getActivity());
+        DatabaseHelper mydb = new DatabaseHelper(getActivity());
         SQLiteDatabase db = mydb.getReadableDatabase();
 
         String query = "select * from ShoppingList where isBought = 0";
@@ -108,7 +108,7 @@ public class FragmentShoppingList extends Fragment implements View.OnClickListen
                                     Toasty.info(getActivity(), "Enter details before save!", Toast.LENGTH_SHORT).show();
                                 } else {
                                     //save data
-                                    DBHelper myDB = new DBHelper(getActivity());
+                                    DatabaseHelper myDB = new DatabaseHelper(getActivity());
                                     SQLiteDatabase db = myDB.getWritableDatabase();  //WritableDatabase
 
                                     String query = "insert into ShoppingList(item, quantity, date) values ( '" + itemName + "', '" + quantity + "', '" + currentDate + "' ) ";

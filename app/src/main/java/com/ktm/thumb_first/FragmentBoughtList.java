@@ -34,7 +34,7 @@ public class FragmentBoughtList extends Fragment implements View.OnClickListener
 
         //List<String> list = new ArrayList<>();
 
-        DBHelper mydb = new DBHelper(getActivity());
+        DatabaseHelper mydb = new DatabaseHelper(getActivity());
         SQLiteDatabase db = mydb.getReadableDatabase();
 
         String query = "select * from ShoppingList where isBought = 1";
@@ -84,7 +84,7 @@ public class FragmentBoughtList extends Fragment implements View.OnClickListener
                     public void onClick(DialogInterface dialog, int which) {
 
 
-                        DBHelper myDB = new DBHelper(getActivity());
+                        DatabaseHelper myDB = new DatabaseHelper(getActivity());
                         SQLiteDatabase db = myDB.getWritableDatabase();
                         String sqlQuery = "delete from ShoppingList where isBought = 1";
                         db.execSQL(sqlQuery);

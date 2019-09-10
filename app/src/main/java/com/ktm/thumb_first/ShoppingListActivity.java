@@ -75,7 +75,7 @@ public class ShoppingListActivity extends AppCompatActivity {
                         String idTemp = tv.getText().toString();
                         int id = Integer.parseInt(idTemp);
 
-                        DBHelper myDB = new DBHelper(ShoppingListActivity.this);
+                        DatabaseHelper myDB = new DatabaseHelper(ShoppingListActivity.this);
                         SQLiteDatabase db = myDB.getWritableDatabase();
                         String sqlQuery = "delete from ShoppingList where _id = " + id+ "";
                         db.execSQL(sqlQuery);
@@ -102,7 +102,7 @@ public class ShoppingListActivity extends AppCompatActivity {
         int id = Integer.parseInt(idTemp);
 
         //save data to db
-        DBHelper myDB = new DBHelper(this);
+        DatabaseHelper myDB = new DatabaseHelper(this);
         SQLiteDatabase db = myDB.getWritableDatabase();  //WritableDatabase
 
         String sqlQuery = "UPDATE ShoppingList SET isBought = 1 WHERE _id = " + id + "";
@@ -122,7 +122,7 @@ public class ShoppingListActivity extends AppCompatActivity {
         int id = Integer.parseInt(idTemp);
 
         //save data to db
-        DBHelper myDB = new DBHelper(this);
+        DatabaseHelper myDB = new DatabaseHelper(this);
         SQLiteDatabase db = myDB.getWritableDatabase();  //WritableDatabase
 
         String sqlQuery = "UPDATE ShoppingList SET isBought = 0 WHERE _id = " + id + "";
@@ -151,7 +151,7 @@ public class ShoppingListActivity extends AppCompatActivity {
                         String idTemp = tv.getText().toString();
                         int id = Integer.parseInt(idTemp);
 
-                        DBHelper myDB = new DBHelper(ShoppingListActivity.this);
+                        DatabaseHelper myDB = new DatabaseHelper(ShoppingListActivity.this);
                         SQLiteDatabase db = myDB.getWritableDatabase();
                         String sqlQuery = "delete from ShoppingList where _id = " + id+ "";
                         db.execSQL(sqlQuery);

@@ -1,122 +1,100 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".DiaryAddActivity">
 
-
-    <EditText
-        android:id="@+id/diary_save_content"
-        android:layout_width="314dp"
-        android:layout_height="312dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginBottom="8dp"
-        android:background="@drawable/box_background"
-        android:ems="10"
-        android:gravity="start|top"
-        android:hint="Content here"
-        android:inputType="textMultiLine"
-        android:padding="30px"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.604"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.714" />
-
-    <TextView
-        android:id="@+id/diary_save_date"
-        android:layout_width="314dp"
-        android:layout_height="39dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginBottom="8dp"
-        android:background="@drawable/box_background"
-        android:ems="10"
-        android:gravity="center"
-        android:hint="@string/select_date"
-        android:inputType="date"
-        android:padding="30px"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.604"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.223" />
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:padding="20sp"
+        android:src="@drawable/diary"
+        android:background="@color/colorPrimary"
+        android:layout_marginBottom="@dimen/activity_vertical_margin"
+        />
 
     <TextView
         android:id="@+id/diary_save_time"
-        android:layout_width="314dp"
-        android:layout_height="39dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="@dimen/margin_top"
+        android:layout_marginHorizontal="@dimen/activity_horizontal_margin"
         android:background="@drawable/box_background"
         android:gravity="center"
         android:hint="@string/select_time"
         android:inputType="date"
-        android:padding="30px"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.604"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.298" />
+        android:padding="@dimen/edit_text_padding_size"
+        />
 
-
-    <Button
-        android:id="@+id/diary_btn_update"
-        android:layout_width="wrap_content"
+    <TextView
+        android:id="@+id/diary_save_date"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginBottom="8dp"
-        android:text="@string/Save"
-        android:onClick="saveDiary"
-        android:background="@drawable/blue_box_background"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/diary_add_btn_clear"
-        app:layout_constraintHorizontal_bias="0.854"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.967" />
+        android:layout_marginVertical="@dimen/margin_top"
+        android:background="@drawable/box_background"
+        android:layout_marginHorizontal="@dimen/activity_horizontal_margin"
+        android:gravity="center"
+        android:hint="@string/select_date"
+        android:inputType="date"
+        android:padding="@dimen/edit_text_padding_size"
+ />
 
-    <Button
-        android:id="@+id/diary_add_btn_clear"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="@drawable/yellow_box_background"
-        android:onClick="clearDiary"
-        android:text="@string/Clear"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.876"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.956" />
 
-    <ImageView
-        android:id="@+id/diary_image"
-        android:layout_width="@dimen/image_diary_width"
-        android:layout_height="@dimen/image_diary_height"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginBottom="8dp"
-        android:foregroundGravity="center"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.027"
-        android:src="@drawable/diary_image"
-        tools:ignore="MissingConstraints"
-        android:contentDescription="TODO" />
+    <EditText
+        android:id="@+id/diary_save_content"
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:layout_marginHorizontal="@dimen/activity_horizontal_margin"
+        android:background="@drawable/box_background"
+        android:layout_gravity="center"
+        android:gravity="center_horizontal"
+        android:hint="Content here"
+        android:inputType="textMultiLine"
+        android:layout_marginVertical="@dimen/margin_top"
+        android:padding="@dimen/edit_text_padding_size"
+/>
 
-</android.support.constraint.ConstraintLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:orientation="horizontal"
+        android:layout_weight="1"
+        android:padding="@dimen/activity_horizontal_margin"
+        >
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"></View>
+
+        <Button
+            android:id="@+id/diary_btn_update"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/Save"
+            android:onClick="saveDiary"
+            android:background="@drawable/blue_box_background"
+            android:layout_marginHorizontal="@dimen/button_margin"
+/>
+
+        <Button
+            android:id="@+id/diary_add_btn_clear"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/yellow_box_background"
+            android:onClick="clearDiary"
+            android:text="@string/Clear"
+/>
+
+
+    </LinearLayout>
+
+
+
+
+
+</LinearLayout>
