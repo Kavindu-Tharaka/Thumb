@@ -124,13 +124,13 @@ public class MainActivity extends AppCompatActivity
 
 
     public void redirectToDoList(View v) {
-        Intent intent = new Intent(this,ToDoListActivity.class);
+        Intent intent = new Intent(this,Add_ToDo.class);
         startActivity(intent);
     }
-    public void redirectAppointments(View v){
-        Intent intent = new Intent(this,TaskHome.class);
+    /*public void redirectAppointments(View v){
+        Intent intent = new Intent(this,AddAppointment.class);
         startActivity(intent);
-    }
+    }*/
     public void redirectDiary(View v) {
         Intent intent = new Intent(this,DiaryListsActivity.class);
         startActivity(intent);
