@@ -9,7 +9,7 @@ public final class ThumbMaster {
     public static class ShoppingList implements BaseColumns{
 
         public static final String TABLE_NAME = "ShoppingList";
-        public static final String COLUMN_NAME_ID = "_id";
+        //public static final String COLUMN_NAME_ID = "_id";
         public static final String COLUMN_NAME_ITEM = "item";
         public static final String COLUMN_NAME_QUANTITY = "quantity";
         public static final String COLUMN_NAME_DATE = "date";
