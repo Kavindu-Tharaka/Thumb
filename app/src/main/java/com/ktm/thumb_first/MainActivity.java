@@ -121,10 +121,15 @@ public class MainActivity extends AppCompatActivity
         finish();
     }
 
-
-    public void ASDSAD() {
-        //dewfewfe
+/*    public void redirectToDoList(View v) {
+        Intent intent = new Intent(this,Add_ToDo.class);
+        startActivity(intent);
     }
+    public void redirectAppointments(View v) {
+        Intent intent = new Intent(this,Add_Appointment.class);
+        startActivity(intent);
+    }*/
+
 
     public void redirectDiary(View v) {
         Intent intent = new Intent(this,DiaryListsActivity.class);
