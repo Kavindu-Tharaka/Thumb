@@ -24,7 +24,7 @@ import android.widget.Toast;
 import java.util.ArrayList;
 import java.util.Calendar;
 
-public class Add_ToDo extends AppCompatActivity {
+public class AddToDo extends AppCompatActivity {
 
 
     private DatabaseHelper mDatabase;
@@ -36,7 +36,7 @@ public class Add_ToDo extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_add__to_do);
+        setContentView(R.layout.activity_addtodo);
 
         RecyclerView listview = (RecyclerView)findViewById(R.id.rev_task);
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this);
@@ -85,7 +85,7 @@ public class Add_ToDo extends AppCompatActivity {
                 int month = calendar.get(Calendar.MONTH);
                 final int day = calendar.get(Calendar.DAY_OF_MONTH);
 
-                datePickerDialog = new DatePickerDialog(Add_ToDo.this, new DatePickerDialog.OnDateSetListener() {
+                datePickerDialog = new DatePickerDialog(AddToDo.this, new DatePickerDialog.OnDateSetListener() {
                     @Override
                     public void onDateSet(DatePicker datePicker, int year, int month, int dayOfMonth) {
 
@@ -106,7 +106,7 @@ public class Add_ToDo extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                timePickerDialog = new TimePickerDialog(Add_ToDo.this, new TimePickerDialog.OnTimeSetListener() {
+                timePickerDialog = new TimePickerDialog(AddToDo.this, new TimePickerDialog.OnTimeSetListener() {
                     @Override
                     public void onTimeSet(TimePicker view, int hour, int minute) {
 
@@ -149,7 +149,7 @@ public class Add_ToDo extends AppCompatActivity {
                 final String time = timeField.getText().toString();
 
                 if(TextUtils.isEmpty(task)){
-                    Toast.makeText(Add_ToDo.this, "Something went wrong. Check your input values", Toast.LENGTH_LONG).show();
+                    Toast.makeText(AddToDo.this, "Something went wrong. Check your input values", Toast.LENGTH_LONG).show();
                 }
                 else{
                     Tasks newTask = new Tasks(task,date,time);
@@ -164,7 +164,7 @@ public class Add_ToDo extends AppCompatActivity {
         builder.setNegativeButton("CANCEL", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
-                Toast.makeText(Add_ToDo.this, "Task cancelled", Toast.LENGTH_LONG).show();
+                Toast.makeText(AddToDo.this, "Task cancelled", Toast.LENGTH_LONG).show();
             }
         });
         builder.show();

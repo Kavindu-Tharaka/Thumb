@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:layout_marginBottom="20dp"
     android:orientation="vertical"
-    tools:context=".Add_ToDo">
+    tools:context=".AddToDo">
 
     <LinearLayout
         android:layout_width="match_parent"
