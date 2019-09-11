@@ -41,7 +41,7 @@ public class DiaryListsActivity extends AppCompatActivity {
 
         ListView listView = findViewById(R.id.diaryListView); //access the listView which is ID = "shopping_list"
 
-        DBHelper mydb = new DBHelper(this);
+        DatabaseHelper mydb = new DatabaseHelper(this);
         SQLiteDatabase db = mydb.getReadableDatabase();
 
         String query = "select * from Diary";
@@ -71,7 +71,7 @@ public class DiaryListsActivity extends AppCompatActivity {
                         String idTemp = textViewv.getText().toString();
                         int id = Integer.parseInt(idTemp);
 
-                        DBHelper myDB = new DBHelper(DiaryListsActivity.this);
+                        DatabaseHelper myDB = new DatabaseHelper(DiaryListsActivity.this);
                         SQLiteDatabase db = myDB.getWritableDatabase();
                         String sqlQuery = "delete from Diary where _id = " + id+ "";
                         db.execSQL(sqlQuery);

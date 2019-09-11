@@ -80,7 +80,7 @@ public class ShoppingListActivity extends AppCompatActivity {
 
                         DatabaseHelper myDB = new DatabaseHelper(ShoppingListActivity.this);
                         SQLiteDatabase db = myDB.getWritableDatabase();
-                        String sqlQuery = "delete from "+ThumbMaster.ShoppingList.TABLE_NAME+" where "+ThumbMaster.ShoppingList.COLUMN_NAME_ID+" = " + id+ "";
+                        String sqlQuery = "delete from "+ThumbMaster.ShoppingList.TABLE_NAME+" where "+ThumbMaster.ShoppingList._ID+" = " + id+ "";
                         db.execSQL(sqlQuery);
 
                         Toasty.success(ShoppingListActivity.this, "Deleted!", Toast.LENGTH_SHORT).show();
@@ -108,7 +108,7 @@ public class ShoppingListActivity extends AppCompatActivity {
         DatabaseHelper myDB = new DatabaseHelper(this);
         SQLiteDatabase db = myDB.getWritableDatabase();  //WritableDatabase
 
-        String sqlQuery = "UPDATE "+ThumbMaster.ShoppingList.TABLE_NAME+" SET "+ThumbMaster.ShoppingList.COLUMN_NAME_ISBOUGHT+" = 1 WHERE "+ThumbMaster.ShoppingList.COLUMN_NAME_ID+" = " + id + "";
+        String sqlQuery = "UPDATE "+ThumbMaster.ShoppingList.TABLE_NAME+" SET "+ThumbMaster.ShoppingList.COLUMN_NAME_ISBOUGHT+" = 1 WHERE "+ThumbMaster.ShoppingList._ID+" = " + id + "";
         db.execSQL(sqlQuery);
 
         Toasty.success(this, "Bought!", Toast.LENGTH_SHORT).show();
@@ -128,7 +128,7 @@ public class ShoppingListActivity extends AppCompatActivity {
         DatabaseHelper myDB = new DatabaseHelper(this);
         SQLiteDatabase db = myDB.getWritableDatabase();  //WritableDatabase
 
-        String sqlQuery = "UPDATE "+ThumbMaster.ShoppingList.TABLE_NAME+" SET "+ThumbMaster.ShoppingList.COLUMN_NAME_ISBOUGHT+" = 0 WHERE "+ThumbMaster.ShoppingList.COLUMN_NAME_ID+" = " + id + "";
+        String sqlQuery = "UPDATE "+ThumbMaster.ShoppingList.TABLE_NAME+" SET "+ThumbMaster.ShoppingList.COLUMN_NAME_ISBOUGHT+" = 0 WHERE "+ThumbMaster.ShoppingList._ID+" = " + id + "";
         db.execSQL(sqlQuery);
 
         Toasty.success(this, "Made Unbought!", Toast.LENGTH_SHORT).show();
@@ -156,7 +156,7 @@ public class ShoppingListActivity extends AppCompatActivity {
 
                         DatabaseHelper myDB = new DatabaseHelper(ShoppingListActivity.this);
                         SQLiteDatabase db = myDB.getWritableDatabase();
-                        String sqlQuery = "delete from "+ThumbMaster.ShoppingList.TABLE_NAME+" where "+ThumbMaster.ShoppingList.COLUMN_NAME_ID+" = " + id+ "";
+                        String sqlQuery = "delete from "+ThumbMaster.ShoppingList.TABLE_NAME+" where "+ThumbMaster.ShoppingList._ID+" = " + id+ "";
                         db.execSQL(sqlQuery);
 
                         Toasty.success(ShoppingListActivity.this, "Deleted!", Toast.LENGTH_SHORT).show();

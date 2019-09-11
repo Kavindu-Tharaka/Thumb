@@ -90,7 +90,7 @@ public class DiaryAddActivity extends AppCompatActivity implements DatePickerDia
 
     @Override
     public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
-        String date = " "+year+" - "+month+" - "+dayOfMonth+" ";
+        String date = " "+year+" - "+(month+1)+" - "+dayOfMonth+" ";
         textView.setText(date);
     }
     public void saveDiary(View v){
@@ -108,7 +108,7 @@ public class DiaryAddActivity extends AppCompatActivity implements DatePickerDia
         }
         else {
             //save data
-            DBHelper dbHelper = new DBHelper(DiaryAddActivity.this);  //create DBHelper object
+            DatabaseHelper dbHelper = new DatabaseHelper(DiaryAddActivity.this);  //create DBHelper object
             SQLiteDatabase database = dbHelper.getWritableDatabase();  //get SQLiteDatabase Writable object
 
             //  insert into Diary(date, content) values('2019-07-28', 'Good day')
@@ -137,4 +137,6 @@ public class DiaryAddActivity extends AppCompatActivity implements DatePickerDia
         textView2.setText("");
         editText2.setText("");
     }
+
+    public void ASDS(){}
 }
