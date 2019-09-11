@@ -61,7 +61,7 @@ public class Add_ToDo extends AppCompatActivity {
         opnDialog.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                addTaskDialog();;
+                addTaskDialog();
             }
         });
 
@@ -207,10 +207,6 @@ public class Add_ToDo extends AppCompatActivity {
         });
     }
 
-    /*public void viewDate(View view)
-    {
 
-
-    }*/
 
 }
