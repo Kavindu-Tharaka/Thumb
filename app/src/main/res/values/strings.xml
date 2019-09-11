@@ -15,7 +15,7 @@
     <string name="menu_send">Send</string>
     <string name="del">Cancel</string>
 
-    <string name="To_Do_List">To Do List</string>
+    <string name="To_Do_List">ToDo List</string>
     <string name="Shopping_List">Shopping List</string>
     <string name="Bought_list">Bought List</string>
     <string name="Appointments">Appointments</string>
@@ -54,6 +54,10 @@
     <string name="hint_enter_password">Enter Password</string>
     <string name="auto_login">Auto Login</string>
     <string name="auto_log_des">By enabling this option you can skip password asking</string>
-
+<!--Savindri-->
+    <string name="plus">+</string>
+    <string name="hint_task">Enter Task</string>
+    <string name="hint_date">Enter Date</string>
+    <string name="hint_time">Enter Time</string>
 
 </resources>
