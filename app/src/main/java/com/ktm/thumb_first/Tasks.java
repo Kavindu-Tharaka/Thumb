@@ -6,6 +6,8 @@ public class Tasks {
     private String task;
     private String date;
     private String time;
+    private String number;
+
 
     public Tasks(String task, String date, String time) {
         this.task = task;
