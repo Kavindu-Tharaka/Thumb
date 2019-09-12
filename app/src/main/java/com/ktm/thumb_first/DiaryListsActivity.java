@@ -44,7 +44,7 @@ public class DiaryListsActivity extends AppCompatActivity {
         DatabaseHelper mydb = new DatabaseHelper(this);
         SQLiteDatabase db = mydb.getReadableDatabase();
 
-        String query = "select * from Diary";
+        String query = "select * from "+ThumbMaster.Diary.TABLE_NAME+"";
         Cursor cursor = db.rawQuery(query,null);   //Cursor -> resultSet , rawQuery -> executeQuery()
         //cursor.moveToFirst();
 

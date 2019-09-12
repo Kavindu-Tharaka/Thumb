@@ -113,7 +113,7 @@ public class DiaryAddActivity extends AppCompatActivity implements DatePickerDia
 
             //  insert into Diary(date, content) values('2019-07-28', 'Good day')
 
-            String query = "insert into Diary(date, time, content) values ( ' " + date + " ', ' " + time + " ',' " + content + " ' ) ";
+            String query = "insert into "+ThumbMaster.Diary.TABLE_NAME+"("+ThumbMaster.Diary.COLUMN_NAME_DATE+", "+ThumbMaster.Diary.COLUMN_NAME_TIME+", "+ThumbMaster.Diary.COLUMN_NAME_CONTENT+") values ( ' " + date + " ', ' " + time + " ',' " + content + " ' ) ";
 
             database.execSQL(query);
 
@@ -138,5 +138,4 @@ public class DiaryAddActivity extends AppCompatActivity implements DatePickerDia
         editText2.setText("");
     }
 
-    public void ASDS(){}
 }
