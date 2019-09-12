@@ -41,7 +41,9 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         db.execSQL(SQL_CREATE_ENTRIES_SHOPPING_LIST);
 
 
-        db.execSQL(SQL_CREATE_ENTRIES_DIARY);*/
+
+
+
         //savindri
         String	CREATE_TASK_TABLE = "CREATE	TABLE " + TABLE_TASKS + "(" + COLUMN_ID + " INTEGER PRIMARY KEY, " + COLUMN_TASK + "  TEXT, " + COLUMN_DATE + " TEXT, "+COLUMN_TIME+" TEXT" + ")";
         db.execSQL(CREATE_TASK_TABLE);
