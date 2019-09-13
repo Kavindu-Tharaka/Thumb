@@ -30,6 +30,7 @@ public class DiaryListsActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(DiaryListsActivity.this,DiaryAddActivity.class);
+                finish();
                 startActivity(intent);
             }
         });
@@ -113,4 +114,7 @@ public class DiaryListsActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
+    public void newListOfDiary(){
+
+    }
 }
