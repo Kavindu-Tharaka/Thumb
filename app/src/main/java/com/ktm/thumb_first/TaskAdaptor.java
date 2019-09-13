@@ -44,18 +44,6 @@ public class TaskAdaptor extends RecyclerView.Adapter<TaskViewHolder> implements
     }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
     @Override
     public void onBindViewHolder(TaskViewHolder holder, int position) {
 
@@ -88,10 +76,10 @@ public class TaskAdaptor extends RecyclerView.Adapter<TaskViewHolder> implements
         context.startActivity(((Activity) context).getIntent());
         }
         });*/
-android.support.v7.app.AlertDialog.Builder alert = new android.support.v7.app.AlertDialog.Builder(context);
+            android.support.v7.app.AlertDialog.Builder alert = new android.support.v7.app.AlertDialog.Builder(context);
 
-            alert.setTitle("Delete entry");
-            alert.setMessage("Are you sure you want to delete?");
+            alert.setTitle("Delete Task");
+            alert.setMessage("Are you sure you want to delete this task?");
             alert.setPositiveButton(android.R.string.yes, new DialogInterface.OnClickListener() {
                 /*Database_TT db = new Database_TT(DeleteTT.this);*/
 
@@ -205,7 +193,7 @@ android.support.v7.app.AlertDialog.Builder alert = new android.support.v7.app.Al
         }
 
         AlertDialog.Builder builder = new AlertDialog.Builder(context);
-        builder.setTitle("Edit Task");
+        builder.setTitle("              Edit Your Task");
         builder.setView(subView);
         builder.create();
 

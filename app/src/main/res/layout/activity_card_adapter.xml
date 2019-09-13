@@ -55,7 +55,7 @@
                 android:layout_alignParentEnd="true"
                 android:layout_marginStart="154dp"
                 android:layout_marginEnd="131dp"
-                android:background="@drawable/green_box_background"
+                android:background="@drawable/edit_btn_one_element_bg"
                 android:text="@string/update"
                 android:textStyle="bold">
 
