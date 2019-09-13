@@ -14,8 +14,10 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     private static final String DATABASE_NAME = "ThumbDB.db";
 
     //Savindri
+    //table declaration
     private static final String TABLE_TASKS = "todo_table";
 
+    //declarations of columns
     private static final String COLUMN_ID = "id";
     private static final String COLUMN_TASK = "task_col";
     private static final String COLUMN_DATE = "date_col";
@@ -42,6 +44,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
 
         //savindri
+        //creating task table
         String	CREATE_TASK_TABLE = "CREATE	TABLE " + TABLE_TASKS + "(" + COLUMN_ID + " INTEGER PRIMARY KEY, " + COLUMN_TASK + "  TEXT, " + COLUMN_DATE + " TEXT, "+COLUMN_TIME+" TEXT" + ")";
         db.execSQL(CREATE_TASK_TABLE);
         //savindri
@@ -65,6 +68,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     //Savindri
 
+    //to insert
+
     public void addTasks(Tasks tasks){
         ContentValues values = new ContentValues();
         values.put(COLUMN_TASK, tasks.getTask());
@@ -73,7 +78,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         SQLiteDatabase db = this.getWritableDatabase();
         db.insert(TABLE_TASKS, null, values);
     }
-
+//to retriew
     public ArrayList<Tasks> listTasks(){
         String sql = "select * from " + TABLE_TASKS;
         SQLiteDatabase db = this.getReadableDatabase();
@@ -99,12 +104,12 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         SQLiteDatabase db = this.getWritableDatabase();
         db.update(TABLE_TASKS, values, COLUMN_ID	+ "	= ?", new String[] { String.valueOf(task.getId())});
     }
-
+//to delete
     public void deleteTasks(int id){
         SQLiteDatabase db = this.getWritableDatabase();
         db.delete(TABLE_TASKS, COLUMN_ID	+ "	= ?", new String[] { String.valueOf(id)});
     }
-
+//to search
     public Tasks findTasks(String task){
         String query = "Select * FROM "	+ TABLE_TASKS + " WHERE " + COLUMN_TASK + " = " + "task";
         SQLiteDatabase db = this.getWritableDatabase();

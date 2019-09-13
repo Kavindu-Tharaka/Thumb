@@ -74,6 +74,8 @@ public class AddToDo extends AppCompatActivity {
         final EditText taskField = (EditText)subView.findViewById(R.id.etTask);
         final EditText dateField = (EditText)subView.findViewById(R.id.etDate);
         final EditText timeField = (EditText)subView.findViewById(R.id.etTime);
+
+        //******************************************************************************************
         ///poddak methana gahala balamu date time picker eka
 
         dateField.setOnClickListener(new View.OnClickListener() {
@@ -133,9 +135,11 @@ public class AddToDo extends AppCompatActivity {
             }
         } );
 
+        //******************************************************************************************
+
         ////////////////////////////////////////////////
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        builder.setTitle("Add New Task");
+        builder.setTitle("              Add New Task");
         builder.setView(subView);
         builder.create();
 
@@ -178,6 +182,7 @@ public class AddToDo extends AppCompatActivity {
         }
     }
 
+    //***menu eke inna xml ekawa muta identify karaganne me method eken****
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
 
@@ -188,7 +193,7 @@ public class AddToDo extends AppCompatActivity {
         search(searchView);
         return true;
     }
-
+    //to search
     private void search(SearchView searchView) {
 
         searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {

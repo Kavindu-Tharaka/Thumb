@@ -30,6 +30,7 @@ public class DiaryListsActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(DiaryListsActivity.this,DiaryAddActivity.class);
+                finish();
                 startActivity(intent);
             }
         });
@@ -44,7 +45,7 @@ public class DiaryListsActivity extends AppCompatActivity {
         DatabaseHelper mydb = new DatabaseHelper(this);
         SQLiteDatabase db = mydb.getReadableDatabase();
 
-        String query = "select * from Diary";
+        String query = "select * from "+ThumbMaster.Diary.TABLE_NAME+"";
         Cursor cursor = db.rawQuery(query,null);   //Cursor -> resultSet , rawQuery -> executeQuery()
         //cursor.moveToFirst();
 
@@ -113,4 +114,7 @@ public class DiaryListsActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
+    public void newListOfDiary(){
+
+    }
 }

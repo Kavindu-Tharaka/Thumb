@@ -44,18 +44,6 @@ public class TaskAdaptor extends RecyclerView.Adapter<TaskViewHolder> implements
     }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
     @Override
     public void onBindViewHolder(TaskViewHolder holder, int position) {
 
@@ -80,13 +68,45 @@ public class TaskAdaptor extends RecyclerView.Adapter<TaskViewHolder> implements
         public void onClick(View view) {
         //delete row from database
 
-        mdatabase.deleteTasks(tasks.getId());
+        //mdatabase.deleteTasks(tasks.getId());
+
 
         //refresh the activity page.
-        ((Activity)context).finish();
+/*        ((Activity)context).finish();
         context.startActivity(((Activity) context).getIntent());
         }
-        });
+        });*/
+            android.support.v7.app.AlertDialog.Builder alert = new android.support.v7.app.AlertDialog.Builder(context);
+
+            alert.setTitle("Delete Task");
+            alert.setMessage("Are you sure you want to delete this task?");
+            alert.setPositiveButton(android.R.string.yes, new DialogInterface.OnClickListener() {
+                /*Database_TT db = new Database_TT(DeleteTT.this);*/
+
+                public void onClick(DialogInterface dialog, int which) {
+                    // continue with delete
+                    Toast.makeText(context, "Successfully deleted!", Toast.LENGTH_LONG).show();
+                    mdatabase.deleteTasks(tasks.getId());
+
+                    //refresh the activity page.
+                    ((Activity)context).finish();
+                    context.startActivity(((Activity) context).getIntent());
+
+                }
+            });
+            alert.setNegativeButton(android.R.string.no, new DialogInterface.OnClickListener() {
+                public void onClick(DialogInterface dialog, int which) {
+                    // close dialog
+
+                    Toast.makeText(context, "Deletion Cancled!", Toast.LENGTH_LONG).show();
+
+                    dialog.cancel();
+                }
+            });
+            alert.show();
+
+        }
+         });
 
 
     }
@@ -173,7 +193,7 @@ public class TaskAdaptor extends RecyclerView.Adapter<TaskViewHolder> implements
         }
 
         AlertDialog.Builder builder = new AlertDialog.Builder(context);
-        builder.setTitle("Edit Task");
+        builder.setTitle("              Edit Your Task");
         builder.setView(subView);
         builder.create();
 
