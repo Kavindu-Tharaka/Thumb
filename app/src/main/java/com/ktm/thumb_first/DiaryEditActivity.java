@@ -108,7 +108,7 @@ public class DiaryEditActivity extends AppCompatActivity implements DatePickerDi
 
     @Override
     public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
-        String date = " "+year+" - "+month+" - "+dayOfMonth+" ";
+        String date = " "+year+" - "+(month+1)+" - "+dayOfMonth+" ";
         textView.setText(date);
     }
 
