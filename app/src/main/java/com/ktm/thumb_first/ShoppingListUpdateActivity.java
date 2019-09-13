@@ -76,8 +76,12 @@ public class ShoppingListUpdateActivity extends AppCompatActivity {
         }
     }
 
+    @Override
+    public void onBackPressed() {
+        Intent intent = new Intent(this,ShoppingListActivity.class);
 
+        finish();
 
-
-
+        startActivity(intent);
+    }
 }
