@@ -111,10 +111,9 @@ public class DiaryListsActivity extends AppCompatActivity {
         intent.putExtra("TIME",time);
         intent.putExtra("CONTENT",content);
 
+        finish();
+
         startActivity(intent);
     }
-
-    public void newListOfDiary(){
-
-    }
+    
 }
