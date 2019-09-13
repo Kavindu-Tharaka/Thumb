@@ -114,4 +114,7 @@ public class DiaryListsActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
+    public void newListOfDiary(){
+
+    }
 }
