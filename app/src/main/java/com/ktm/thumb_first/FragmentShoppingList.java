@@ -7,7 +7,6 @@ import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v4.app.Fragment;
 import android.support.v4.widget.SimpleCursorAdapter;
 import android.support.v7.app.AlertDialog;
@@ -85,8 +84,8 @@ public class FragmentShoppingList extends Fragment implements View.OnClickListen
     @Override
     public void onClick(View v) {
                 final View view = LayoutInflater.from(getActivity()).inflate(R.layout.activity_shopping_list_add, null);
-                final EditText item = view.findViewById(R.id.item_name_save);
-                final EditText qty = view.findViewById(R.id.quantity_save);
+                final EditText item = view.findViewById(R.id.item_name_shopping_list_add);
+                final EditText qty = view.findViewById(R.id.quantity_shopping_list_add);
 
                 AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
 
