@@ -11,6 +11,7 @@
         android:theme="@style/AppTheme">
         <activity android:name=".AddToDo"></activity>
         <activity android:name=".Add_ToDo"></activity>
+        <activity android:name=".Add_Appointment"></activity>
         <activity android:name=".ShoppingListUpdateActivity" android:theme="@style/AppThemeToolBar.NoActionBar"/>
         <activity android:name=".ProfileActivity" android:theme="@style/AppThemeToolBar.NoActionBar"/>
         <activity android:name=".LoginActivity" android:theme="@style/AppThemeToolBar.NoActionBar"/>

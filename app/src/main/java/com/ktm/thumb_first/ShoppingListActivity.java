@@ -1,16 +1,15 @@
 package com.ktm.thumb_first;
 
 import android.content.DialogInterface;
-import android.content.Intent;
 import android.database.sqlite.SQLiteDatabase;
-import android.support.design.widget.AppBarLayout;
 import android.support.design.widget.TabLayout;
-import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -49,18 +48,66 @@ public class ShoppingListActivity extends AppCompatActivity {
         TextView tv2 = parent2.findViewById(R.id.item_name_shopping_list);
         TextView tv3 = parent2.findViewById(R.id.item_qty_shopping_list);
 
-        String id = tv1.getText().toString();
+        final String id = tv1.getText().toString();
         String itemName = tv2.getText().toString();
-        String qty = tv3.getText().toString();
+        String QTY = tv3.getText().toString();
 
-        Intent intent = new Intent(this, ShoppingListUpdateActivity.class);
+/*        Intent intent = new Intent(this, ShoppingListUpdateActivity.class);
 
         intent.putExtra("ID", id); //pass  parametrs to next activity which start by start intent
         intent.putExtra("ITEM", itemName); //pass  parametrs to next activity which start by start intent
         intent.putExtra("QTY", qty); //pass  parametrs to next activity which start by start intent
 
         finish(); //to avoid many backs
-        startActivity(intent);
+        startActivity(intent);*/
+
+        final View view = LayoutInflater.from(this).inflate(R.layout.activity_shopping_list_add, null);
+        final EditText item = view.findViewById(R.id.item_name_shopping_list_add);
+        final EditText qty = view.findViewById(R.id.quantity_shopping_list_add);
+
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+
+        item.setText(itemName);
+        qty.setText(QTY);
+
+        builder.setMessage("Update Item & Quantity")
+                .setView(view)
+                .setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        //getText from edit text components
+                        String itemName = item.getText().toString();
+                        String quantity = qty.getText().toString();
+
+                        if (itemName.isEmpty() || quantity.isEmpty()) {    //if no details are entered, error msg will be displayed
+                            Toast.makeText(getBaseContext(), "Enter details before update!", Toast.LENGTH_SHORT).show();
+                            //Snackbar.make(view, "Enter details before save!", Snackbar.LENGTH_LONG).setAction("Action", null).show();
+
+                        } else {
+                            //save data
+                            DatabaseHelper myDB = new DatabaseHelper(getBaseContext());
+                            SQLiteDatabase db = myDB.getWritableDatabase();  //WritableDatabase
+
+                            String query = "update " + ThumbMaster.ShoppingList.TABLE_NAME + " set " + ThumbMaster.ShoppingList.COLUMN_NAME_ITEM + " = '" + itemName + "', " + ThumbMaster.ShoppingList.COLUMN_NAME_QUANTITY + " = '" + quantity + "' where " + ThumbMaster.ShoppingList._ID+ " = " + id + "";
+
+                            db.execSQL(query);
+
+                            Toasty.success(getBaseContext(), "Updated successfully", Toast.LENGTH_SHORT).show();
+
+                            //to refresh
+                            finish();
+                            startActivity(getIntent());
+
+
+                        }
+                    }
+                })
+                .setNegativeButton("Cancel", null);
+
+        AlertDialog alertDialog = builder.create();
+        alertDialog.show();
+
+
     }
 
     public void deleteItemShoppingList(View v){
