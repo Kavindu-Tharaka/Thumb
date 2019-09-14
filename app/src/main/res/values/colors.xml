@@ -13,4 +13,8 @@
     <color name="colorRed">#F44336</color>
     <!--savindri-->
     <color name="colorText">#FFFFFF</color>
+
+    <!--CHAMIKA-->
+    <color name="colorUpdate">#57e852</color>
+    <color name="colorDelete">#ffcc00</color>
 </resources>

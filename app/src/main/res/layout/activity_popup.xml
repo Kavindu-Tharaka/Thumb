@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+
+    <EditText
+        android:layout_marginTop="25dp"
+        android:id="@+id/popClient"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:hint="Enter Client"
+        android:layout_marginRight="5dp"
+        android:layout_marginLeft="5dp" />
+
+    <EditText
+        android:id="@+id/popVenue"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="5dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="5dp"
+        android:ems="10"
+        android:hint="Enter Venue"
+        android:inputType="textPersonName" />
+
+    <EditText
+        android:layout_marginTop="15dp"
+        android:id="@+id/popDate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:hint="Enter Date"
+        android:layout_marginRight="5dp"
+        android:layout_marginLeft="5dp"
+       />
+    <EditText
+        android:layout_marginTop="15dp"
+        android:id="@+id/popTime"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:hint="Enter Time"
+        android:layout_marginRight="5dp"
+        android:layout_marginLeft="5dp"/>
+
+
+
+
+
+
+</LinearLayout>
