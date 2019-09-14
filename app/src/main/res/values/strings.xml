@@ -60,4 +60,9 @@
     <string name="hint_date">Enter Date</string>
     <string name="hint_time">Enter Time</string>
 
+    <!--CHAMIKA-->
+
+    <string name="update1">UPDATE</string>
+    <string name="delete">DELETE</string>
+    <string name="add1">+</string>
 </resources>

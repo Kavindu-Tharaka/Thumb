@@ -24,6 +24,8 @@ public class MainActivity extends AppCompatActivity
         setContentView(R.layout.activity_main);
 
 
+
+
         //DrawerLayout drawer = findViewById(R.id.drawer_layout);
         NavigationView navigationView = findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
@@ -115,6 +117,15 @@ public class MainActivity extends AppCompatActivity
         startActivity(intent);
         finish();
     }
+    //CHAMIKA
+
+    public void redirectAppointments(View v){
+        Intent i = new Intent(this,Add_Appointment.class);
+        startActivity(i);
+    }
+
+    //CHAMIKA
+
 
 
 
@@ -122,10 +133,7 @@ public class MainActivity extends AppCompatActivity
         Intent intent = new Intent(this, AddToDo.class);
         startActivity(intent);
     }
-    /*public void redirectAppointments(View v){
-        Intent intent = new Intent(this,AddAppointment.class);
-        startActivity(intent);
-    }*/
+
     public void redirectDiary(View v) {
         Intent intent = new Intent(this,DiaryListsActivity.class);
         startActivity(intent);
