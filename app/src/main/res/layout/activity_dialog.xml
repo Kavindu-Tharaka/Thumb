@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!--<TextView
+        android:id="@+id/textView2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Create Your Task"
+        android:textAlignment="center"
+        android:textSize="27dp"
+        android:textStyle="bold"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="5dp"
+        android:layout_marginLeft="5dp"/>-->
+
+    <EditText
+        android:layout_marginTop="25dp"
+        android:id="@+id/etTask"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:hint="@string/hint_task"
+        android:layout_marginRight="5dp"
+        android:layout_marginLeft="5dp" />
+
+    <EditText
+        android:layout_marginTop="15dp"
+        android:id="@+id/etDate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:hint="@string/hint_date"
+        android:layout_marginRight="5dp"
+        android:layout_marginLeft="5dp" />
+    <EditText
+        android:layout_marginTop="15dp"
+        android:id="@+id/etTime"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:hint="@string/hint_time"
+        android:layout_marginRight="5dp"
+        android:layout_marginLeft="5dp"/>
+
+
+
+    <!-- <Button
+         android:layout_marginTop="20dp"
+         android:id="@+id/create_task"
+         android:layout_width="match_parent"
+         android:layout_height="wrap_content"
+         android:text="Enter Task"
+         android:layout_marginRight="5dp"
+         android:layout_marginLeft="5dp"
+         android:layout_marginBottom="5dp"/>-->
+
+
+</LinearLayout>

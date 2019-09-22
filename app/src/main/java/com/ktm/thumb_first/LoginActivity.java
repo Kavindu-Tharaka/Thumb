@@ -33,10 +33,9 @@ public class LoginActivity extends AppCompatActivity {
 
         SharedPreferences welcome = getSharedPreferences("welcome", Context.MODE_PRIVATE);
         String userName = welcome.getString("USER_NAME", "");
-        //String password = welcome.getString("PASSWORD", "");
 
         TextView welcomeNote = findViewById(R.id.welcome_note);
-        welcomeNote.setText("Hello " + userName + ", Welcome Back");
+        welcomeNote.setText("Hello " + userName + ", Welcome Again");
 
     }
 

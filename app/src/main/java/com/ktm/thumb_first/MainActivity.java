@@ -5,20 +5,15 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v7.app.AlertDialog;
 import android.view.View;
 import android.support.v4.view.GravityCompat;
-import android.support.v7.app.ActionBarDrawerToggle;
 import android.view.MenuItem;
 import android.support.design.widget.NavigationView;
 import android.support.v4.widget.DrawerLayout;
 
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
 import android.view.Menu;
-import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -27,6 +22,8 @@ public class MainActivity extends AppCompatActivity
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+
 
 
         //DrawerLayout drawer = findViewById(R.id.drawer_layout);
@@ -120,10 +117,21 @@ public class MainActivity extends AppCompatActivity
         startActivity(intent);
         finish();
     }
+    //CHAMIKA
+
+    public void redirectAppointments(View v){
+        Intent i = new Intent(this,Add_Appointment.class);
+        startActivity(i);
+    }
+
+    //CHAMIKA
 
 
-    public void ASDSAD() {
-        //dewfewfe
+
+
+    public void redirectToDoList(View v) {
+        Intent intent = new Intent(this, AddToDo.class);
+        startActivity(intent);
     }
 
     public void redirectDiary(View v) {
