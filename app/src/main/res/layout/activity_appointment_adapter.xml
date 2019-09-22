@@ -65,8 +65,8 @@
                 android:layout_alignParentEnd="true"
                 android:layout_marginStart="154dp"
                 android:layout_marginEnd="131dp"
-                android:background="@drawable/updatebtn"
-                android:text="@string/update1"
+                android:background="@drawable/edit_btn_one_element_bg"
+                android:text="@string/update"
                 android:textStyle="bold">
 
             </Button>
@@ -79,8 +79,8 @@
                 android:layout_alignParentEnd="true"
                 android:layout_marginStart="276dp"
                 android:layout_marginEnd="5dp"
-                android:background="@drawable/delbtnbg"
-                android:text="@string/delete"
+                android:background="@drawable/delete_btn_one_element_bg"
+                android:text="@string/Delete"
                 android:textStyle="bold">
 
             </Button>

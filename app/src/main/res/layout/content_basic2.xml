@@ -9,6 +9,33 @@
     android:orientation="vertical"
     >
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <EditText
+            android:id="@+id/searchTextBoughtList"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="5"
+            android:background="@drawable/edit_text_bg"
+            android:layout_margin="@dimen/margin_top"
+            android:padding="@dimen/margin_end"
+            />
+        <ImageButton
+            android:id="@+id/searchBtnBoughtList"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:src="@drawable/ic_search_black_24dp"
+            android:layout_margin="@dimen/margin_top"
+            android:background="@drawable/blue_box_background"
+            />
+
+
+
+    </LinearLayout>
+
     <ListView
         android:id="@+id/bought_list"
         android:layout_width="match_parent"
