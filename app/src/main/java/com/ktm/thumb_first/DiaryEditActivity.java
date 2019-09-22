@@ -140,7 +140,11 @@ public class DiaryEditActivity extends AppCompatActivity implements DatePickerDi
             DatabaseHelper dbHelper = new DatabaseHelper(DiaryEditActivity.this);
             SQLiteDatabase database = dbHelper.getWritableDatabase();
 
-            String query = " UPDATE "+ThumbMaster.Diary.TABLE_NAME+" SET "+ThumbMaster.Diary.COLUMN_NAME_DATE+" = '" +date+ "', "+ ThumbMaster.Diary.COLUMN_NAME_CONTENT +" = '"+content+"',"+ ThumbMaster.Diary.COLUMN_NAME_TIME +" = '" +time+ "'  where "+ThumbMaster.Diary._ID+" = '"+id+"'";
+            String query = " UPDATE "+ThumbMaster.Diary.TABLE_NAME+" SET "+
+                    ThumbMaster.Diary.COLUMN_NAME_DATE+" = '" +date+ "', "+
+                    ThumbMaster.Diary.COLUMN_NAME_CONTENT +" = '"+content+"',"+
+                    ThumbMaster.Diary.COLUMN_NAME_TIME +" = '" +time+ "'  where "+
+                    ThumbMaster.Diary._ID+" = '"+id+"'";
             database.execSQL(query);
 
             Toasty.success(DiaryEditActivity.this, "Updated Successful",Toast.LENGTH_LONG).show();
