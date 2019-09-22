@@ -1,6 +1,7 @@
 package com.ktm.thumb_first;
 
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
@@ -10,11 +11,14 @@ import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.Fragment;
 import android.support.v4.widget.SimpleCursorAdapter;
 import android.support.v7.app.AlertDialog;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.ListView;
 import android.widget.Toast;
 
@@ -29,7 +33,10 @@ public class FragmentShoppingList extends Fragment implements View.OnClickListen
     View view;
     ListView listView;
     Button edit, delete, bought;
+    ImageButton search;
     FloatingActionButton floatingActionButton;
+    EditText searchText ;
+
     public FragmentShoppingList() {
     }
 
@@ -37,44 +44,39 @@ public class FragmentShoppingList extends Fragment implements View.OnClickListen
     public void onResume() {
         super.onResume();
 
-        //listView = findViewById(R.id.shopping_list); //access the listView which is ID = "shopping_list"
-        //List<String> list = new ArrayList<>();
 
         DatabaseHelper mydb = new DatabaseHelper(getActivity());
         SQLiteDatabase db = mydb.getReadableDatabase();
 
-        String query = "select * from "+ ThumbMaster.ShoppingList.TABLE_NAME +" where "+ ThumbMaster.ShoppingList.COLUMN_NAME_ISBOUGHT +" = 0";
-        Cursor cursor = db.rawQuery(query,null);   //Cursor -> resultSet , rawQuery -> executeQuery()
+        String query = "select * from " + ThumbMaster.ShoppingList.TABLE_NAME + " where " + ThumbMaster.ShoppingList.COLUMN_NAME_ISBOUGHT + " = 0";
+        Cursor cursor = db.rawQuery(query, null);   //Cursor -> resultSet , rawQuery -> executeQuery()
         cursor.moveToFirst();
 
-/*        while (cursor.isAfterLast() == false){
-            String item = cursor.getString(1);
-            list.add(item);  //the name which add to list
-            cursor.moveToNext();  //point to next line
-        }*/
-
         int layout = R.layout.one_element_shopping_list;  //choose layout created manually
-        String[] columns = {"item","quantity","_id","date"};  //get values from table columns
-        int[] views = {R.id.item_name_shopping_list,R.id.item_qty_shopping_list,R.id.item_id_shopping_list,R.id.created_date_shopping_list}; //IDs of fields that table data will be mapped
+        String[] columns = {"item", "quantity", "_id", "date"};  //get values from table columns
+        int[] views = {R.id.item_name_shopping_list, R.id.item_qty_shopping_list, R.id.item_id_shopping_list, R.id.created_date_shopping_list}; //IDs of fields that table data will be mapped
 
-        SimpleCursorAdapter simpleCursorAdapter = new SimpleCursorAdapter(getActivity(),layout,cursor,columns,views);
+        SimpleCursorAdapter simpleCursorAdapter = new SimpleCursorAdapter(getActivity(), layout, cursor, columns, views);
         listView.setAdapter(simpleCursorAdapter);
 
     }
 
+
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        view = inflater.inflate(R.layout.activity_basic,container,false);
+        view = inflater.inflate(R.layout.activity_basic, container, false);
 
         listView = view.findViewById(R.id.shopping_list);
         floatingActionButton = view.findViewById(R.id.fab1);
         edit = view.findViewById(R.id.edit_shopping_list);
         delete = view.findViewById(R.id.delete_shopping_list);
         bought = view.findViewById(R.id.bought_shopping_list);
+        search = view.findViewById(R.id.searchBtnShoppingList);
+        searchText = view.findViewById(R.id.searchTextShoppingList);
 
         floatingActionButton.setOnClickListener(this);
-
+        search.setOnClickListener(this);
 
 
         return view;
@@ -83,12 +85,13 @@ public class FragmentShoppingList extends Fragment implements View.OnClickListen
 
     @Override
     public void onClick(View v) {
+        switch (v.getId()) {
+            case R.id.fab1:
                 final View view = LayoutInflater.from(getActivity()).inflate(R.layout.activity_shopping_list_add, null);
                 final EditText item = view.findViewById(R.id.item_name_shopping_list_add);
                 final EditText qty = view.findViewById(R.id.quantity_shopping_list_add);
 
                 AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
-
                 builder.setMessage("Enter New Item & Quantity")
                         .setView(view)
                         .setPositiveButton("OK", new DialogInterface.OnClickListener() {
@@ -105,29 +108,53 @@ public class FragmentShoppingList extends Fragment implements View.OnClickListen
 
                                 if (itemName.isEmpty() || quantity.isEmpty()) {    //if no details are entered, error msg will be displayed
                                     Toasty.info(getActivity(), "Enter details before save!", Toast.LENGTH_SHORT).show();
-                                    //Snackbar.make(view, "Enter details before save!", Snackbar.LENGTH_LONG).setAction("Action", null).show();
 
                                 } else {
                                     //save data
                                     DatabaseHelper myDB = new DatabaseHelper(getActivity());
                                     SQLiteDatabase db = myDB.getWritableDatabase();  //WritableDatabase
 
-                                    String query = "insert into "+ ThumbMaster.ShoppingList.TABLE_NAME +"( "+ThumbMaster.ShoppingList.COLUMN_NAME_ITEM+" , "+ThumbMaster.ShoppingList.COLUMN_NAME_QUANTITY+", "+ThumbMaster.ShoppingList.COLUMN_NAME_DATE+") values ( '" + itemName + "', '" + quantity + "', '" + currentDate + "' ) ";
+                                    String query = "insert into "+ ThumbMaster.ShoppingList.TABLE_NAME +"( "+
+                                            ThumbMaster.ShoppingList.COLUMN_NAME_ITEM+" , "+
+                                            ThumbMaster.ShoppingList.COLUMN_NAME_QUANTITY+", "+
+                                            ThumbMaster.ShoppingList.COLUMN_NAME_DATE+") " +
+                                            "values ( '" + itemName + "', '" + quantity + "', '" + currentDate + "' ) ";
                                     db.execSQL(query);
-
                                     Toasty.success(getActivity(), "Saved Successfully!", Toast.LENGTH_SHORT).show();
-
-                                    //in order to refresh the list
-                                    onResume();
-
-
+                                    onResume(); //in order to refresh the list
                                 }
                             }
                         })
                         .setNegativeButton("Cancel", null);
-
                 AlertDialog alertDialog = builder.create();
                 alertDialog.show();
+
+                break;
+
+            case R.id.searchBtnShoppingList:
+
+                String searchQueary = searchText.getText().toString();
+
+                DatabaseHelper mydb = new DatabaseHelper(getActivity());
+                SQLiteDatabase db = mydb.getReadableDatabase();
+
+                String query = "select * from " + ThumbMaster.ShoppingList.TABLE_NAME + " where " +
+                        ThumbMaster.ShoppingList.COLUMN_NAME_ISBOUGHT + " = 0 AND " +
+                        ThumbMaster.ShoppingList.COLUMN_NAME_ITEM + " LIKE  '%"+searchQueary+"%'  ";
+                Cursor cursor = db.rawQuery(query, null);   //Cursor -> resultSet , rawQuery -> executeQuery()
+                cursor.moveToFirst();
+
+
+                int layout = R.layout.one_element_shopping_list;  //choose layout created manually
+                String[] columns = {"item", "quantity", "_id", "date"};  //get values from table columns
+                int[] views = {R.id.item_name_shopping_list, R.id.item_qty_shopping_list, R.id.item_id_shopping_list, R.id.created_date_shopping_list}; //IDs of fields that table data will be mapped
+
+                SimpleCursorAdapter simpleCursorAdapter = new SimpleCursorAdapter(getActivity(), layout, cursor, columns, views);
+                listView.setAdapter(simpleCursorAdapter);
+
+                break;
+        }
+
     }
 
 }

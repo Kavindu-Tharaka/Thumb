@@ -52,14 +52,6 @@ public class ShoppingListActivity extends AppCompatActivity {
         String itemName = tv2.getText().toString();
         String QTY = tv3.getText().toString();
 
-/*        Intent intent = new Intent(this, ShoppingListUpdateActivity.class);
-
-        intent.putExtra("ID", id); //pass  parametrs to next activity which start by start intent
-        intent.putExtra("ITEM", itemName); //pass  parametrs to next activity which start by start intent
-        intent.putExtra("QTY", qty); //pass  parametrs to next activity which start by start intent
-
-        finish(); //to avoid many backs
-        startActivity(intent);*/
 
         final View view = LayoutInflater.from(this).inflate(R.layout.activity_shopping_list_add, null);
         final EditText item = view.findViewById(R.id.item_name_shopping_list_add);
