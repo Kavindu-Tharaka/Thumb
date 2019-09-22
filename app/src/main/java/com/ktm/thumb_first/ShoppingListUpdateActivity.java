@@ -60,7 +60,11 @@ public class ShoppingListUpdateActivity extends AppCompatActivity {
             DatabaseHelper databaseHelper = new DatabaseHelper(this);
             SQLiteDatabase db = databaseHelper.getWritableDatabase();
 
+
+            String query = "update " + ThumbMaster.ShoppingList.TABLE_NAME + " set " + ThumbMaster.ShoppingList.COLUMN_NAME_ITEM + " = '" + itemName + "', " + ThumbMaster.ShoppingList.COLUMN_NAME_QUANTITY + " = '" + itemQty + "' where " + ThumbMaster.ShoppingList._ID + " = " + id + "";
+
             String query = "update " + ThumbMaster.ShoppingList.TABLE_NAME + " set " + ThumbMaster.ShoppingList.COLUMN_NAME_ITEM + " = '" + itemName + "', " + ThumbMaster.ShoppingList.COLUMN_NAME_QUANTITY + " = '" + itemQty + "' where " + ThumbMaster.ShoppingList._ID+ " = " + id + "";
+
 
             db.execSQL(query);
 

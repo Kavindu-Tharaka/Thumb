@@ -11,11 +11,30 @@
 
     <ImageView
         android:layout_width="match_parent"
-        android:layout_height="150dp"
+        android:layout_height="100dp"
         android:background="@color/colorPrimary"
         android:padding="20sp"
         android:src="@drawable/diary"
         />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <EditText
+            android:id="@+id/searchTextDiary"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="5"
+            android:background="@drawable/edit_text_bg"
+            android:layout_margin="@dimen/margin_top"
+            android:padding="@dimen/margin_end"
+            android:hint="Search by date"
+            android:gravity="center_horizontal"
+            />
+
+
+    </LinearLayout>
 
     <ListView
         android:id="@+id/diaryListView"

@@ -87,7 +87,6 @@ public class DiaryAddActivity extends AppCompatActivity implements DatePickerDia
         );
         datePickerDialog.show();
     }
-
     @Override
     public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
         String date = " "+year+" - "+(month+1)+" - "+dayOfMonth+" ";
@@ -112,19 +111,18 @@ public class DiaryAddActivity extends AppCompatActivity implements DatePickerDia
             SQLiteDatabase database = dbHelper.getWritableDatabase();  //get SQLiteDatabase Writable object
 
             //  insert into Diary(date, content) values('2019-07-28', 'Good day')
-
-            String query = "insert into "+ThumbMaster.Diary.TABLE_NAME+"("+ThumbMaster.Diary.COLUMN_NAME_DATE+", "+ThumbMaster.Diary.COLUMN_NAME_TIME+", "+ThumbMaster.Diary.COLUMN_NAME_CONTENT+") values ( ' " + date + " ', ' " + time + " ',' " + content + " ' ) ";
+            String query = "insert into "+ThumbMaster.Diary.TABLE_NAME+"("+
+                    ThumbMaster.Diary.COLUMN_NAME_DATE+"," +" "+
+                    ThumbMaster.Diary.COLUMN_NAME_TIME+", "+
+                    ThumbMaster.Diary.COLUMN_NAME_CONTENT+")" +
+                    " values ( ' " + date + " ', ' " + time + " ',' " + content + " ' ) ";
 
             database.execSQL(query);
-
             Toasty.success(DiaryAddActivity.this, "Saved Successfully!", Toast.LENGTH_SHORT).show();
-
             finish(); //finish this activity in order to avoid so many backs
 
-            //in order to refresh the list
-            //startActivity(getIntent());
-
             Intent intent = new Intent(this,DiaryListsActivity.class);
+
             startActivity(intent);
         }
     }
